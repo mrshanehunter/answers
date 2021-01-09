@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
-import { auth, generateUserDocument } from "../firebase"
+import { auth, generateUserDocument, balanceUpdate } from "../firebase"
 
 const AuthContext = React.createContext()
 
@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
 
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password)
-  } 
+  }
 
   function userdetails(user, { displayName }) {
     return generateUserDocument(user, { displayName })
@@ -39,10 +39,15 @@ export function AuthProvider({ children }) {
     return currentUser.updatePassword(password)
   }
 
+  function handleUpdate(qty) {
+    return balanceUpdate(currentUser, qty)
+  }
+
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged( async userAuth => {
+    const unsubscribe = auth.onAuthStateChanged(async userAuth => {
       const user = await generateUserDocument(userAuth)
       setCurrentUser(user)
+      
       setLoading(false)
     })
 
@@ -58,6 +63,7 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEmail,
     updatePassword,
+    handleUpdate,
   }
 
   return (

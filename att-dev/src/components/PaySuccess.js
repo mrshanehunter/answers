@@ -1,35 +1,51 @@
-import React, { useContext } from "react"
-import { Link } from "gatsby"
+import React, { useContext, useState } from "react"
+import { navigate } from "gatsby"
 import { Card, Button } from "react-bootstrap"
 import PackContext from "../contexts/PackContext"
-import handleConfirm from "../services/handleConfirm"
+import { useAuth } from "../contexts/AuthContext"
+
+
 
 export default function PaySuccess() { 
+  const { handleUpdate } = useAuth()
+  useContext(PackContext)  
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-
-const { order } = useContext(PackContext);  
-
-
-const upd = order;
-
-const updateOrder = (upd) => {
-  console.log("Maybe I've cracked it", upd)
+  const handleClick = async (e, qty) => {
+    e.preventDefault();
+    try {
+    setLoading(true)
+    await handleUpdate(qty)
+  } catch (error) {
+    setError("Error updating balance")
+    console.error(error);
+  }
+    setLoading(false)
+    navigate("/app/profile", { replace: true })
 }
+
  
  return(
- <>
+ <PackContext.Consumer>
+   { context => (
+   <>
   <Card>
+    {error && alert(error)}
     <Card.Body>
      <h2>Your Payment has been approved</h2>
-     <h3>Token Purchase of {upd} is currently being added to your balance</h3>
+     <h3>Token Purchase of {context[0].pcont} is currently being added to your balance</h3>
   
- <Link to="/app/profile">
-    <Button type="button" onClick={updateOrder}>Click here to continue</Button>
-  </Link>
+ 
+    <Button type="button" onClick={e => {
+      const qty  = context[0].pcont;
+      handleClick(e, qty)}}>Click here to continue</Button>
+ 
   </Card.Body>
   </Card> 
- 
-
-  </>
+ </>
+ )}
+</PackContext.Consumer>
+  
 )
 }

@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Button, Card } from "react-bootstrap"
 import usePacks from "../services/usePacks"
+
 
 
 // function clickHandlerE(data, { pack }) {
@@ -47,6 +48,8 @@ export default function TokenPurchase({ ...props }) {
     tokens, data
   })
   
+    
+
   let packs
 
   if (props.welcome === true) {
@@ -60,6 +63,7 @@ export default function TokenPurchase({ ...props }) {
   return (
     <Card className="m-2">
       <Card.Body className="d-flex-column" >
+        
         <h2>Token Packs</h2>
         {packs.map(pack => (
           <div key={pack.id} pack={pack} >

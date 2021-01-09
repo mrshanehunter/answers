@@ -49,4 +49,14 @@ const getUserDocument = async uid => {
   console.error("Error fetching user", error);
 }
 }
-
+export const balanceUpdate = async (currentUser, qty) => {
+  if (!currentUser) return null;
+  try {
+    const increment = firebase.firestore.FieldValue.increment(qty)
+    const userDocument = db.collection(`users`).doc(`${currentUser.uid}`)
+    await userDocument.update({ balance: increment })
+    }
+  catch(error) {
+    console.error("Error updating balance", error)
+  }
+}
