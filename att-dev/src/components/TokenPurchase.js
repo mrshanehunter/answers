@@ -41,7 +41,7 @@ export default function TokenPurchase({ ...props }) {
   let data
 
   const {
-    order, 
+    
     addToOrder,
   } = usePacks({
     tokens, data

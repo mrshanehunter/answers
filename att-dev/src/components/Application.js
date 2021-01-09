@@ -12,7 +12,7 @@ import FirstCheckout from "../components/FirstCheckout"
 import PaySuccess from "../components/PaySuccess"
 import PayReject from "../components/PayReject"
 import AskApp from "../components/AskApp"
-import { PackProvider } from "../contexts/PackContext"
+
 
 export default function Application({ ...props }) {
   return (
@@ -22,7 +22,7 @@ export default function Application({ ...props }) {
       style={{ minHeight: "100vh" }}
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <PackProvider>
+        
           <Router>
             <PrivateRoute path="/app/profile/" component={Profile} />
             <PrivateRoute
@@ -37,7 +37,7 @@ export default function Application({ ...props }) {
             <Login path="/app" />
             <ForgotPassword path="/app/forgot-password" />
           </Router>
-          </PackProvider>
+         
       </div>
     </Container>
     </Layout>

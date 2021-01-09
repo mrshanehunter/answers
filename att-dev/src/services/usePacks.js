@@ -15,7 +15,21 @@ export default function usePacks({ tokens, data }) {
     const itemPrice = packItem.pack_price_code
     const welcome = packItem.welcome_offer;
     const qty = packItem.pack_token_qty;
-    setOrder([itemPrice, qty, welcome]);
+    let incBal;
+    if (welcome === true) {
+      incBal = qty * 2
+    } else {
+      incBal = qty 
+    }
+    const updBal = incBal;
+
+    setOrder({
+      pcode:  itemPrice, 
+      pcont: updBal,
+      pstat: welcome,
+    }
+    );
+    
     const orderItem = [{ price:`${itemPrice}`, quantity: 1 }];
 
     fetch("/.netlify/functions/orderCreate", {
@@ -26,16 +40,22 @@ export default function usePacks({ tokens, data }) {
         const { id } = await response.json()
         const stripe = await stripePromise 
         const { error } = await stripe.redirectToCheckout({ sessionId: id }) 
+        console.log( id )
         alert(error.message)
       })
       .catch(err => alert(err.message))
       setLoading(false)
   }
-  
+ 
   return {
     order,
     addToOrder,
-    loading
-  }
+    loading,
+    
+  }}
+
+
+
   
-}
+  
+  
