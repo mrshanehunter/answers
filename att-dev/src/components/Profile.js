@@ -8,7 +8,7 @@ export default function Profile({ ...props }) {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   
-
+  
   async function handleLogout() {
     setError("")
 

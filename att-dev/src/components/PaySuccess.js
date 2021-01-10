@@ -7,7 +7,7 @@ import { useAuth } from "../contexts/AuthContext"
 
 
 export default function PaySuccess() { 
-  const { handleUpdate } = useAuth()
+  const { handleUpdate, finishUpdate } = useAuth()
   useContext(PackContext)  
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
@@ -17,6 +17,7 @@ export default function PaySuccess() {
     try {
     setLoading(true)
     await handleUpdate(qty)
+    await finishUpdate()
   } catch (error) {
     setError("Error updating balance")
     console.error(error);
