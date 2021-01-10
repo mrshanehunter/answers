@@ -1,20 +1,19 @@
 import { useStaticQuery, graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import React, { useState } from "react"
-import { Card, Button } from "react-bootstrap"
+import { Card, Button, Alert } from "react-bootstrap"
 import ReactCardFlip from "react-card-flip"
 import Image from "./Image"
 import { useAuth } from "../contexts/AuthContext"
 import { askUpdate } from "../firebase"
-
-
+import AskReject from "./AskReject"
 
 export default function AskApp() {
+  const { currentUser, finishUpdate } = useAuth()
   const [isFlipped, setIsFlipped] = useState(false)
+  const [count, setCount] = useState(currentUser.balance)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
-  const { currentUser, finishUpdate } = useAuth()
-  
 
   const { cards } = useStaticQuery(graphql`
     query {
@@ -39,60 +38,74 @@ export default function AskApp() {
   const random = Math.floor(Math.random() * 49)
   const card = cards.nodes[`${random}`]
 
-  const closeOut = async (e) => {
-    e.preventDefault();
+  const closeOut = async e => {
+    e.preventDefault()
     try {
       setLoading(true)
       await finishUpdate()
     } catch (error) {
       setError("Error updating balance")
-      console.error(error);
+      console.error(error)
     }
-      setLoading(false)
-      navigate("/app/profile", { replace: true })
+    setLoading(false)
+    navigate("/app/profile", { replace: true })
   }
-  
 
   const clickHandler = () => {
     setIsFlipped(!isFlipped)
     if (!isFlipped) {
       askUpdate(currentUser)
-    }
+      setCount(count - 1)}
+      if (count <= 1) {
+        return <AskReject />
+      }
+    
   }
 
-  return (
-    <>
-     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-        <Card>
-          <Card.Body>
-            <Image />
-          </Card.Body>
-          <Button className="w-100 text-center mb-4" onClick={clickHandler}>
-            Ask The Tarot
-          </Button>
-        </Card>
+  if (currentUser.balance <= 1) {
+    return <AskReject />
+  } else {
+    return (
+      <>
+        <div>Counter = {count}</div>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+          <Card>
+            <Card.Body>
+              <Image />
+            </Card.Body>
+            <Button className="w-100 text-center mb-4" onClick={clickHandler}>
+              Ask The Tarot
+            </Button>
+          </Card>
 
+          <Card>
+            <Card.Body>
+              <h3>{card.card_name}</h3>
+              <Img
+                fluid={card.image.asset.fluid}
+                style={{ width: `62%`, margin: `0 auto 1rem` }}
+                alt={card.card_name}
+              />
+              <h4>{card.yes_or_no}</h4>
+              <p>{card.response}</p>
+            </Card.Body>
+            <Button className="w-100 text-center mb-4" onClick={clickHandler}>
+              Ask Another Question
+            </Button>
+          </Card>
+        </ReactCardFlip>
         <Card>
           <Card.Body>
-            <h3>{card.card_name}</h3>
-            <Img
-              fluid={card.image.asset.fluid}
-              style={{ width: `62%`, margin: `0 auto 1rem` }}
-              alt={card.card_name}
-            />
-            <h4>{card.yes_or_no}</h4>
-            <p>{card.response}</p>
+            <Button
+              className="w-100 text-center mb-4"
+              onClick={e => closeOut(e)}
+            >
+              Return to Profile
+            </Button>
           </Card.Body>
-          <Button className="w-100 text-center mb-4" onClick={clickHandler}>
-            Ask Another Question
-          </Button>
         </Card>
-      </ReactCardFlip>
-      <Card>
-        <Card.Body>
-          <Button className="w-100 text-center mb-4" disable={loading} onClick={e => closeOut(e)}>Return to Profile</Button>
-        </Card.Body>
-      </Card>
-    </>
-  )
+      </>
+    )
+  }
 }
