@@ -38,7 +38,7 @@ export default function PaySuccess() {
      <h3>Token Purchase of {context[0].pcont} is currently being added to your balance</h3>
   
  
-    <Button type="button" onClick={e => {
+    <Button disabled={loading} type="button" onClick={e => {
       const qty  = context[0].pcont;
       handleClick(e, qty)}}>Click here to continue</Button>
  

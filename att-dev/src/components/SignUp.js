@@ -26,12 +26,13 @@ export default function Signup() {
       const displayName = displayNameRef.current.value
       const { user } = await signup(emailRef.current.value, passwordRef.current.value)
       await userdetails(user, { displayName})
-      navigate("/app/first-checkout")
+     
     } catch {
       setError("Failed to create an account")
     }
 
     setLoading(false)
+    navigate("/app/first-checkout")
   }
 
   return (

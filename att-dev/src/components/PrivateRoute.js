@@ -4,8 +4,11 @@ import { useAuth } from "../contexts/AuthContext"
 
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
-  const { currentUser } = useAuth()
-  if (!currentUser && location.pathname !== `/app`) {
+  
+  const { currentUser, loading } = useAuth()
+
+
+  if (!loading && !currentUser && location.pathname !== "/app") {
     navigate("/app")
     return null
   }

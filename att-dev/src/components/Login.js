@@ -18,12 +18,12 @@ export default function Login() {
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
-      navigate("/app/profile/")
     } catch {
       setError("Failed to log in")
     }
 
     setLoading(false)
+    setTimeout((navigate("/app/profile/")), 1000)
   }
 
   return (

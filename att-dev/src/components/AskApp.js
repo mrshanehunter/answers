@@ -1,16 +1,21 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import React, { useState } from "react"
 import { Card, Button } from "react-bootstrap"
 import ReactCardFlip from "react-card-flip"
 import Image from "./Image"
+import { useAuth } from "../contexts/AuthContext"
+import { askUpdate } from "../firebase"
 
 
 
 export default function AskApp() {
   const [isFlipped, setIsFlipped] = useState(false)
-  const [counter, setCounter] = useState(0)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const { currentUser, finishUpdate } = useAuth()
   
+
   const { cards } = useStaticQuery(graphql`
     query {
       cards: allSanityTarot {
@@ -34,19 +39,30 @@ export default function AskApp() {
   const random = Math.floor(Math.random() * 49)
   const card = cards.nodes[`${random}`]
 
+  const closeOut = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true)
+      await finishUpdate()
+    } catch (error) {
+      setError("Error updating balance")
+      console.error(error);
+    }
+      setLoading(false)
+      navigate("/app/profile", { replace: true })
+  }
+  
+
   const clickHandler = () => {
     setIsFlipped(!isFlipped)
     if (!isFlipped) {
-      setCounter(counter -1)
+      askUpdate(currentUser)
     }
   }
 
   return (
     <>
-     
-        
-      
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         <Card>
           <Card.Body>
             <Image />
@@ -72,6 +88,11 @@ export default function AskApp() {
           </Button>
         </Card>
       </ReactCardFlip>
+      <Card>
+        <Card.Body>
+          <Button className="w-100 text-center mb-4" disable={loading} onClick={e => closeOut(e)}>Return to Profile</Button>
+        </Card.Body>
+      </Card>
     </>
   )
 }

@@ -62,3 +62,16 @@ export const balanceUpdate = async (currentUser, qty) => {
   }
 }
 
+export const askUpdate = async (currentUser) => {
+  if (!currentUser) return null;
+  try {
+    const increment = firebase.firestore.FieldValue.increment(-1);
+    const userDocument = db.collection(`users`).doc(`${currentUser.uid}`);
+    await userDocument.update({ balance: increment})
+    return getUserDocument(currentUser.uid)
+  }
+  catch(error) {
+    console.error("Error updating balance", error)
+  }
+}
+

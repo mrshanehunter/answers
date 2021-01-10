@@ -1,25 +1,7 @@
-import React, { useContext } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Button, Card } from "react-bootstrap"
 import usePacks from "../services/usePacks"
-
-
-
-// function clickHandlerE(data, { pack }) {
-//   console.log(data);
-// }
-
-
-
-
-// function SingleButton({ pack }) {
- 
-//   return (  
-// <Button className="w-100 mb-2" type="button" name={pack.pack_price_code} onClick={e => clickHandlerE(e.currentTarget.name)}>
-//     {pack.pack_name} for ${pack.pack_price_display / 100}
-// </Button>
-//   )
-// }
 
 export default function TokenPurchase({ ...props }) {
 
