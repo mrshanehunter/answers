@@ -13,23 +13,24 @@ import PaySuccess from "../components/PaySuccess"
 import PayReject from "../components/PayReject"
 import AskApp from "../components/AskApp"
 
-
 export default function Application({ ...props }) {
   return (
     <Layout>
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
-        
+      <Container
+        className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="w-100" style={{ maxWidth: "400px" }}>
           <Router>
             <PrivateRoute path="/app/profile/" component={Profile} />
             <PrivateRoute
               path="/app/update-profile"
               component={UpdateProfile}
             />
-            <PrivateRoute path="/app/first-checkout" component={FirstCheckout} />
+            <PrivateRoute
+              path="/app/first-checkout"
+              component={FirstCheckout}
+            />
             <PrivateRoute path="/app/pay-success" component={PaySuccess} />
             <PrivateRoute path="/app/pay-reject" component={PayReject} />
             <PrivateRoute path="/app/ask-app" component={AskApp} />
@@ -37,10 +38,8 @@ export default function Application({ ...props }) {
             <Login path="/app" />
             <ForgotPassword path="/app/forgot-password" />
           </Router>
-         
-      </div>
-    </Container>
+        </div>
+      </Container>
     </Layout>
   )
 }
-

@@ -7,7 +7,7 @@ const FooterStyles = styled.footer`
   grid-gap: 1rem;
   font-size: 1rem;
   text-align: center;
-`;  
+`
 
 export default function Footer() {
   return (
@@ -16,5 +16,5 @@ export default function Footer() {
       <p>Privacy</p>
       <p>Terms</p>
     </FooterStyles>
-  );
+  )
 }

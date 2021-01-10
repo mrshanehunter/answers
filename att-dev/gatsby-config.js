@@ -49,20 +49,20 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-stripe`,
-        options: {
-          objects: ["Price"],
-          secretKey: process.env.STRIPE_SECRET_KEY,
-          downloadFiles: false,
-        },
+      options: {
+        objects: ["Price"],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false,
+      },
     },
     {
       resolve: `gatsby-plugin-netlify-functions`,
-        options: {
-          functionsSrc: `${__dirname}/functions`,
-          functionsOutput: `${__dirname}/functionsres`,
-        },
+      options: {
+        functionsSrc: `${__dirname}/functions`,
+        functionsOutput: `${__dirname}/functionsres`,
+      },
     },
-    
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

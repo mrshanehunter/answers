@@ -11,7 +11,6 @@ export default function Signup() {
   const { signup, userdetails } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -24,9 +23,11 @@ export default function Signup() {
       setError("")
       setLoading(true)
       const displayName = displayNameRef.current.value
-      const { user } = await signup(emailRef.current.value, passwordRef.current.value)
-      await userdetails(user, { displayName})
-     
+      const { user } = await signup(
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+      await userdetails(user, { displayName })
     } catch {
       setError("Failed to create an account")
     }
