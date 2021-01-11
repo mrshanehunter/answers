@@ -36,11 +36,11 @@ export default function AskApp() {
     }
   `)
 
-  const random = Math.floor(Math.random() * 49)
+  const random = Math.floor(Math.random() * 78)
   const card = cards.nodes[`${random}`]
   const opac = {
     opacity: opacity,
-  };
+  }
   const closeOut = async e => {
     e.preventDefault()
     try {
