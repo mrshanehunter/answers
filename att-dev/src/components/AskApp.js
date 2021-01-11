@@ -55,7 +55,7 @@ export default function AskApp() {
     setIsFlipped(!isFlipped)
     if (!isFlipped) {
       askUpdate(currentUser)
-      setCount(count - 1)
+      setCount(count - 10)
     }
     if (count <= 1) {
       return <AskReject />
