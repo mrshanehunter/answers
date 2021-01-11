@@ -13,6 +13,7 @@ export default function AskApp() {
   const [isFlipped, setIsFlipped] = useState(false)
   const [count, setCount] = useState(currentUser.balance)
   const [loading, setLoading] = useState(false)
+  const [opacity, setOpacity] = useState(1)
   const [error, setError] = useState("")
 
   const { cards } = useStaticQuery(graphql`
@@ -37,7 +38,9 @@ export default function AskApp() {
 
   const random = Math.floor(Math.random() * 49)
   const card = cards.nodes[`${random}`]
-
+  const opac = {
+    opacity: opacity,
+  };
   const closeOut = async e => {
     e.preventDefault()
     try {
@@ -52,10 +55,10 @@ export default function AskApp() {
   }
 
   const clickHandler = () => {
-   
     if (isFlipped && count < 2) {
       alert("You are out of tokens")
-      return ( <AskReject user={currentUser} />)
+      setOpacity(0)
+      return <AskReject user={currentUser} />
     }
     setIsFlipped(!isFlipped)
     if (!isFlipped) {
@@ -64,48 +67,43 @@ export default function AskApp() {
     }
   }
 
- 
-    return (
-      <>
-        <div>Counter = {count}</div>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-          <Card>
-            <Card.Body>
-              <Image />
-            </Card.Body>
-            <Button className="w-100 text-center mb-4" onClick={clickHandler}>
-              Ask The Tarot
-            </Button>
-          </Card>
-
-          <Card>
-            <Card.Body>
-              <h3>{card.card_name}</h3>
-              <Img
-                fluid={card.image.asset.fluid}
-                style={{ width: `63%`, margin: `0 auto 1rem` }}
-                alt={card.card_name}
-              />
-              <h4>{card.yes_or_no}</h4>
-              <p>{card.response}</p>
-            </Card.Body>
-            <Button className="w-100 text-center mb-4" onClick={clickHandler}>
-              Ask Another Question
-            </Button>
-          </Card>
-        </ReactCardFlip>
+  return (
+    <>
+      <div>Counter = {count}</div>
+      {error && <Alert variant="danger">{error}</Alert>}
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         <Card>
           <Card.Body>
-            <Button
-              className="w-100 text-center mb-4"
-              onClick={e => closeOut(e)}
-            >
-              Return to Profile
-            </Button>
+            <Image />
           </Card.Body>
+          <Button className="w-100 text-center mb-4" onClick={clickHandler}>
+            Ask The Tarot
+          </Button>
         </Card>
-      </>
-    )
-  }
 
+        <Card style={opac}>
+          <Card.Body>
+            <h3>{card.card_name}</h3>
+            <Img
+              fluid={card.image.asset.fluid}
+              style={{ width: `63%`, margin: `0 auto 1rem` }}
+              alt={card.card_name}
+            />
+            <h4>{card.yes_or_no}</h4>
+            <p>{card.response}</p>
+          </Card.Body>
+          <Button className="w-100 text-center mb-4" onClick={clickHandler}>
+            Ask Another Question
+          </Button>
+        </Card>
+      </ReactCardFlip>
+      <Card>
+        <Card.Body>
+          <Button className="w-100 text-center mb-4" onClick={e => closeOut(e)}>
+            Return to Profile
+          </Button>
+        </Card.Body>
+      </Card>
+    </>
+  )
+}
