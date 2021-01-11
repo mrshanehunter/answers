@@ -21,7 +21,7 @@ export default function Profile({ ...props }) {
 
   const handleApp = () => {
     if (currentUser.balance < 2) {
-      alert("You'll need more tokens before you can Ask The Tarot right now");
+      alert("You will need more tokens to Ask The Tarot");
     } else {
       navigate("/app/ask-app")
     }
