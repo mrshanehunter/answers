@@ -19,6 +19,14 @@ export default function Profile({ ...props }) {
     }
   }
 
+  const handleApp = () => {
+    if (currentUser.balance < 2) {
+      alert("You'll need more tokens before you can Ask The Tarot right now");
+    } else {
+      navigate("/app/ask-app")
+    }
+  }
+
   return (
     <>
       <Card className="m-2">
@@ -42,9 +50,9 @@ export default function Profile({ ...props }) {
 
       <Card className="m-2">
         <Card.Body>
-          <Link to="/app/ask-app">
-            <Button className="w-100">Ask The Tarot</Button>
-          </Link>
+          
+            <Button className="w-100" onClick={handleApp}>Ask The Tarot</Button>
+          
         </Card.Body>
       </Card>
       <TokenPurchase page={props.path} welcome={false} />
