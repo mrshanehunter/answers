@@ -4,9 +4,8 @@ import { Navbar, Nav, Container } from "react-bootstrap"
 
 export default function Header() {
   return (
-    <Navbar expand="lg" variant="light" bg="light">
-      <Container>
-        <Navbar.Brand href="/">Navbar</Navbar.Brand>
+    <Navbar expand="lg" variant="light">
+      <Navbar.Brand href="/">Navbar</Navbar.Brand>
         <Nav as="ul" style={{ display: `inline-block` }}>
           <Nav.Item as="li">
             <Link to="/app" className="nav-link" activeClassName="active">
@@ -23,7 +22,6 @@ export default function Header() {
             </Link>
           </Nav.Item>
         </Nav>
-      </Container>
     </Navbar>
   )
 }

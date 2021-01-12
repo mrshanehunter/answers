@@ -7,6 +7,13 @@ const FooterStyles = styled.footer`
   grid-gap: 1rem;
   font-size: 1rem;
   text-align: center;
+  background: var(--shade);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding-top: 0.25rem;
+  p {
+    padding-top: 0.5rem;
+  }
 `
 
 export default function Footer() {

@@ -3,6 +3,7 @@ import Img from "gatsby-image"
 import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import ReactCardFlip from "react-card-flip"
+import { CSSTransition } from "react-transition-group"
 import Image from "./Image"
 import { useAuth } from "../contexts/AuthContext"
 import { askUpdate } from "../firebase"
@@ -46,6 +47,7 @@ export default function AskApp() {
 
   const closeOut = async e => {
     e.preventDefault()
+    setOpacity(0)
     try {
       setLoading(true)
       await finishUpdate()
@@ -74,7 +76,6 @@ export default function AskApp() {
 
   return (
     <>
-      <div>Mounted = {mounted}</div>
       <div>Counter = {count}</div>
       {error && <Alert variant="danger">{error}</Alert>}
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
@@ -82,30 +83,35 @@ export default function AskApp() {
           <Card.Body>
             <Image />
           </Card.Body>
-          <Button className="w-100 text-center mb-4" onClick={clickHandler}>
+          <Button className="w-75 ml-auto mr-auto text-center mb-4" onClick={clickHandler}>
             Ask The Tarot
           </Button>
         </Card>
 
         <Card style={opac}>
-          <Card.Body>
-            <h3>{card.card_name}</h3>
+          <CSSTransition 
+          in={isFlipped}
+          timeout={1200}
+          >
+          <Card.Body className="d-flex-column text-center" >
+            <h5>{card.card_name}</h5>
             <Img
               fluid={card.image.asset.fluid}
-              style={{ width: `63%`, margin: `0 auto 1rem` }}
+              style={{ width: `170px`, height: `275px`, margin: `0 auto 1rem`, boxShadow: `0 0 0.75rem rgba(0,0,0,0.5)` }}
               alt={card.card_name}
             />
             <h4>{card.yes_or_no}</h4>
-            <p>{card.response}</p>
+            <p style={{fonSize: `0.5vw`}}>{card.response}</p>
           </Card.Body>
-          <Button className="w-100 text-center mb-4" onClick={clickHandler}>
+          </CSSTransition>
+          <Button className="w-75 ml-auto mr-auto text-center mb-4" onClick={clickHandler}>
             Ask Another Question
           </Button>
         </Card>
       </ReactCardFlip>
-      <Card>
-        <Card.Body>
-          <Button className="w-100 text-center mb-4" onClick={e => closeOut(e)}>
+      <Card className="mt-3">
+        <Card.Body className="d-flex justify-content-center">
+          <Button className="w-75 text-center" onClick={e => closeOut(e)}>
             Return to Profile
           </Button>
         </Card.Body>

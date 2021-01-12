@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, navigate } from "gatsby"
+import Img from "gatsby-image"
+import Logo from "./Logo"
 import TokenPurchase from "./TokenPurchase"
 
 export default function Profile({ ...props }) {
@@ -21,7 +23,7 @@ export default function Profile({ ...props }) {
 
   const handleApp = () => {
     if (currentUser.balance < 2) {
-      alert("You will need more tokens to Ask The Tarot");
+      alert("You will need more tokens to Ask The Tarot")
     } else {
       navigate("/app/ask-app")
     }
@@ -29,13 +31,18 @@ export default function Profile({ ...props }) {
 
   return (
     <>
-      <Card className="m-2">
+      <Card className="m-3">
         <Card.Body>
-          <h2 className="text-center mb-4">Profile</h2>
+          <h4 className="text-center">What's your question {currentUser.displayName}?</h4>
+          <Button className="w-100 d-flex justify-content-center"onClick={handleApp}>
+            <Logo />
+          </Button>
+        </Card.Body>
+      </Card>
+      <Card className="m-3">
+        <Card.Body>
+          <h4 className="text-center mb-4">Profile</h4>
           {error && <Alert variant="danger">{error}</Alert>}
-          <p>
-            <strong>Name:</strong> {currentUser.displayName}
-          </p>
           <p>
             <strong>Balance:</strong> {currentUser.balance} tokens{" "}
           </p>
@@ -48,19 +55,13 @@ export default function Profile({ ...props }) {
         </Card.Body>
       </Card>
 
-      <Card className="m-2">
-        <Card.Body>
-          
-            <Button className="w-100" onClick={handleApp}>Ask The Tarot</Button>
-          
-        </Card.Body>
-      </Card>
+    
       <TokenPurchase page={props.path} welcome={false} />
-      <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout}>
+      <Card className="m-3 logOut">
+        <Button className="log" variant="link" onClick={handleLogout}>
           Log Out
         </Button>
-      </div>
+      </Card>
     </>
   )
 }

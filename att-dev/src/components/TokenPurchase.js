@@ -6,7 +6,7 @@ import usePacks from "../services/usePacks"
 export default function TokenPurchase({ ...props }) {
   const { tokenpacks } = useStaticQuery(graphql`
     query {
-      tokenpacks: allSanityTokenpacks {
+      tokenpacks: allSanityTokenpacks(sort: {fields: pack_token_qty}){
         nodes {
           pack_name
           pack_price_display
@@ -36,13 +36,13 @@ export default function TokenPurchase({ ...props }) {
   }
 
   return (
-    <Card className="m-2">
-      <Card.Body className="d-flex-column">
-        <h2>Token Packs</h2>
+    <Card className="m-3">
+      <Card.Body className="d-flex-column justify-content-center text-center">
+        <h4>Acquire Tokens</h4>
         {packs.map(pack => (
           <div key={pack.id} pack={pack}>
             <Button
-              className="order w-100 mb-2"
+              className="order w-100 mb-2 mt-3 pt-2 pb-2"
               type="button"
               name={pack.pack_price_code}
               onClick={e => {
