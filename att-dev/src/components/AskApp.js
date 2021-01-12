@@ -15,6 +15,7 @@ export default function AskApp() {
   const [loading, setLoading] = useState(false)
   const [opacity, setOpacity] = useState(1)
   const [error, setError] = useState("")
+  const [mounted, setMounted] = useState(true)
 
   const { cards } = useStaticQuery(graphql`
     query {
@@ -41,6 +42,8 @@ export default function AskApp() {
   const opac = {
     opacity: opacity,
   }
+
+
   const closeOut = async e => {
     e.preventDefault()
     try {
@@ -52,7 +55,9 @@ export default function AskApp() {
     }
     setLoading(false)
     navigate("/app/profile", { replace: true })
+    setMounted(false)
   }
+
 
   const clickHandler = () => {
     if (isFlipped && count < 2) {
@@ -69,6 +74,7 @@ export default function AskApp() {
 
   return (
     <>
+      <div>Mounted = {mounted}</div>
       <div>Counter = {count}</div>
       {error && <Alert variant="danger">{error}</Alert>}
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
