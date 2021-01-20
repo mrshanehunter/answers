@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import Reveal from "react-reveal/Reveal"
-import Fade from "react-reveal/Fade"
 import ReactCardFlip from "react-card-flip"
 import Image from "./Image"
 import Img from "gatsby-image"
@@ -40,7 +39,7 @@ export default function Teaser() {
 
   return (
     <>
-      <Reveal>
+      <Reveal delay={2000} duration={2000}>
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedFrontToBack={0.99} flipSpeedBackToFront={0.1}>
           <Card style={{ height: `560px` }}>
             <Card.Body>
@@ -59,6 +58,7 @@ export default function Teaser() {
           </Card>
 
           <Card style={{ height: `560px` }}>
+         
             <Card.Body className="d-flex-column text-center">
               <h5>{card.card_name}</h5>
 
@@ -75,15 +75,17 @@ export default function Teaser() {
 
               <h4>{card.yes_or_no}</h4>
               <div style={{ width: `240px`, height: `90px` }}>
-                <p style={{ fontSize: `4vw` }}>{card.response}</p>
+                <p style={{ fontSize: `4.5vw` }}>{card.response}</p>
               </div>
             </Card.Body>
+           
             <div className="d-flex justify-content-center p-3">
             <Button 
             type="button"
             className="w-100 mx-auto"
             onClick={handleClick}>Another Question?</Button>
             </div>
+           
           </Card>
         </ReactCardFlip>
       </Reveal>

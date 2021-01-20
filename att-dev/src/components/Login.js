@@ -12,16 +12,16 @@ export default function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-
+    
     try {
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
-      setTimeout(navigate("/app/profile"), 1000)
+      setTimeout(() => { navigate("/app/profile")},1700)
     } catch {
       setError("Failed to log in")
-    } finally {
-    }
+    } 
+    
     setLoading(false)
   }
 
@@ -49,10 +49,10 @@ export default function Login() {
           </div>
         </Card.Body>
       </Card>
-      
-         <div className="w-100 text-center mt-2">
-          Need an account? <Link to="/app/signup">Sign Up</Link>
-        </div>
-       </>
+
+      <div className="w-100 text-center mt-2">
+        Need an account? <Link to="/app/signup">Sign Up</Link>
+      </div>
+    </>
   )
 }

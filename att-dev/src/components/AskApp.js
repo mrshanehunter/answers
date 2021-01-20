@@ -1,6 +1,9 @@
 import { navigate } from "gatsby"
 import React, { useState } from "react"
-import { Card, Button, Alert } from "react-bootstrap"
+import Container from "react-bootstrap/Container"
+import Alert from "react-bootstrap/Alert"
+import Card from "react-bootstrap/Card"
+import Button from "react-bootstrap/Button"
 import Image from "./Image"
 import { useAuth } from "../contexts/AuthContext"
 import { askUpdate } from "../firebase"
@@ -23,7 +26,7 @@ export default function AskApp() {
    const clickHandler = async (e) => {
     e.preventDefault()
     setLoading(loading)
-    if (count < 2) {
+    if (count < 1) {
       navigate("/app/ask-balance")
       return <AskReject />
     } else {
@@ -41,7 +44,16 @@ export default function AskApp() {
 
   return (
     <>
-      <div>Counter = {count}</div>
+      {(count > 1)
+      ? <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `rgba(251, 201, 38, 0.5)`, fontSize: `4.75vw`}}>You can Ask The Tarot {count} questions</p> </Container>
+      : (count === 1)
+      ? <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `4.75vw`}}>{currentUser.displayName}, this is your last question</p></Container>
+      : <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `4.75vw`}}>{currentUser.displayName}, you're out of tokens</p></Container>
+
+    }
+      
+      
+      
       {error && <Alert variant="danger">{error}</Alert>}
       
         <Card>
@@ -53,9 +65,11 @@ export default function AskApp() {
        
        <Card className="mt-3">
          <Card.Body>
-         <Button className="w-100 ml-auto mr-auto text-center" onClick={e => {clickHandler(e)}}>
+          
+         <Button disabled={loading} className="w-100 ml-auto mr-auto text-center" onClick={e => {clickHandler(e)}}>
             Ask The Tarot
           </Button>
+        
          </Card.Body>
        </Card>
         

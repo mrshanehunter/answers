@@ -1,16 +1,11 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import { Link } from "gatsby"
-import { Navbar, Nav, Container } from "react-bootstrap"
+import Container from "react-bootstrap/Container"
 import Logo from "./Logo"
 import styled from "styled-components"
 import { useAuth } from "../contexts/AuthContext"
 
-
-
-
-
-const StyledLogo = styled.div `
+const StyledLogo = styled.div`
   max-width: 150px;
   position: relative;
   top: 0;
@@ -26,10 +21,9 @@ const StyledLogo = styled.div `
   margin-bottom: 0.5rem;
   padding-left: 0;
   margin-left: 0;
-  
-`;
+`
 
-const StyledNavigation = styled.div` 
+const StyledNavigation = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -48,32 +42,37 @@ const StyledNavigation = styled.div`
   a {
     color: var(--gold);
     padding-left: 1rem;
-
+    font-size: 5vw;
   }
-`;
-
-
-
+`
 
 export default function Header() {
-
   const { currentUser } = useAuth()
 
-
   return (
-    <Container className="d-flex pl-2 pr-2" style={{background: `rgba(65, 36, 86, 0.35)`, borderRadius: `1rem`,
-    boxShadow: `0 0 0.2rem rgba(0, 0, 0, 0.8)`}}>
+    <Container
+      className="d-flex pl-2 pr-2"
+      style={{
+        background: `rgba(65, 36, 86, 0.35)`,
+        borderRadius: `1rem`,
+        boxShadow: `0 0 0.2rem rgba(0, 0, 0, 0.8)`,
+      }}
+    >
       <StyledLogo>
         <AniLink paintDrip to="/" hex="#412456" duration={1}>
           <Logo />
         </AniLink>
       </StyledLogo>
       <StyledNavigation>
-
-      {currentUser 
-      ?  <AniLink paintDrip to="/app/profile" hex="#412456" duration={1}>Profile</AniLink>
-      :  <AniLink paintDrip to="/app/" hex="#412456" duration={1}>Log In</AniLink>
-}  
+        {currentUser ? (
+          <AniLink paintDrip to="/app/profile" hex="#412456" duration={1}>
+            Profile
+          </AniLink>
+        ) : (
+          <AniLink paintDrip to="/app/" hex="#412456" duration={1}>
+            Log In
+          </AniLink>
+        )}
       </StyledNavigation>
     </Container>
   )

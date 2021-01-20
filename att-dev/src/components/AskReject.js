@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { Card, Button } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 
@@ -8,13 +8,19 @@ export default function AskReject() {
 
   return (
     <>
-      <Card>
+      <Card className="mb-4">
         <Card.Body>
-          <h2>You don't have enough tokens {currentUser.displayName}.</h2>
-          <h3>To Ask The Tarot more questions, you'll need more tokens.</h3>
-          <Link to="/app/profile">
-            <Button className="w-50 mb-4 ml-auto mr-auto">Get Some Now</Button>
-          </Link>
+          <h3 className="text-center">You don't have enough tokens {currentUser.displayName}.</h3>
+          <h3 className="text-center">To Ask The Tarot more questions, you'll need more tokens.</h3>
+          
+        </Card.Body>
+      </Card>
+
+      <Card className="mt-4">
+        <Card.Body>
+        <AniLink paintDrip to="/app/profile" hex="#412456" duration={1}>
+            <Button className="w-100">Get Some Now</Button>
+          </AniLink>
         </Card.Body>
       </Card>
     </>

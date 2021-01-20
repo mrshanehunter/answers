@@ -1,12 +1,15 @@
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Reveal from "react-reveal/Reveal"
 import Fade from "react-reveal/Fade"
 import Zoom from "react-reveal/Zoom"
+import { useAuth } from "../contexts/AuthContext"
+import { db } from "../firebase" 
+
 
 export default function AskAnswer(props) {
   const { cards } = useStaticQuery(graphql`
@@ -29,9 +32,26 @@ export default function AskAnswer(props) {
     }
   `)
 
+  const { currentUser } = useAuth()
   const random = Math.floor(Math.random() * 78)
-
   const card = cards.nodes[`${random}`]
+  const [state, setState] = useState(currentUser)
+
+  useEffect(() => {
+    const unsub = db
+      .collection(`users`)
+      .doc(`${currentUser.uid}`)
+      .onSnapshot(doc => {
+        const user = doc.data()
+        if (state.balance > user.balance) {
+        currentUser.balance = user.balance
+        setState(state => [{...state, balance: user.balance}])
+        }
+      })
+    return () => {
+      unsub()
+    }
+  })
 
   return (
     <>
@@ -49,7 +69,7 @@ export default function AskAnswer(props) {
                   fluid={card.image.asset.fluid}
                   style={{
                     width: `170px`,
-                    height: `275px`,
+                    height: `285px`,
                     margin: `0 auto 1rem`,
                     boxShadow: `0 0 0.75rem rgba(0,0,0,0.5)`,
                   }}
@@ -63,7 +83,7 @@ export default function AskAnswer(props) {
               </Zoom>
             </Fade>
             <Fade delay={10500} duration={9500}>
-              <p style={{ fontSize: `1.5vw` }}>{card.response}</p>
+              <p style={{ fontSize: `4vw` }}>{card.response}</p>
             </Fade>
           </Card.Body>
         </Reveal>

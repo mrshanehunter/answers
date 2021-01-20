@@ -36,7 +36,7 @@ export default function TokenPurchase({ ...props }) {
   }
 
   return (
-    <Card className="m-3">
+    <Card className="mb-4">
       <Card.Body className="d-flex-column justify-content-center text-center">
         <h4>Acquire Tokens</h4>
         {packs.map(pack => (

@@ -78,14 +78,7 @@ img {
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.8);
 }
 
-.navbar {
-  background: var(--shade);
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  width: 100%;
-  margin: 0;
-  
-}
+
 
 .card {
   background: var(--shade);

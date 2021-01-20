@@ -30,14 +30,19 @@ export default function PaySuccess() {
         <>
           <Card>
             {error && alert(error)}
-            <Card.Body>
-              <h2>Your Payment has been approved</h2>
+            <Card.Body className="text-center">
+              <h3>Your payment has been approved</h3>
               <h3>
-                Token Purchase of {context[0].pcont} is currently being added to
-                your balance
+                We're currently adding {context[0].pcont} tokens to your balance
               </h3>
 
-              <Button
+             
+            </Card.Body>
+          </Card>
+          <Card className="mt-5">
+            <Card.Body>
+            <Button
+                className="w-100"
                 disabled={loading}
                 type="button"
                 onClick={e => {
