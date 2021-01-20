@@ -73,6 +73,8 @@ img {
   width: 95%;
   margin: 1rem auto;
   border-radius: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.8);
 }
 

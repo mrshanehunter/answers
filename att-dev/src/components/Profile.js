@@ -7,8 +7,24 @@ import Logo from "./Logo"
 import TokenPurchase from "./TokenPurchase"
 
 export default function Profile({ ...props }) {
+  const [data, setData] = useState({})
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
+
+  
+ /* useEffect(() => {
+    const unsubscribe = async () => {
+      if (currentUser) {
+      db.collection(`users`).doc(`${currentUser.uid}`).onSnapshot(doc => {   
+      await setData(doc.data())
+      })
+        
+      }
+    }
+    return () => {unsubscribe()}
+  });
+*/
+
 
   async function handleLogout() {
     setError("")
@@ -21,6 +37,8 @@ export default function Profile({ ...props }) {
     }
   }
 
+
+
   const handleApp = () => {
     if (currentUser.balance < 2) {
       alert("You will need more tokens to Ask The Tarot")
@@ -29,6 +47,7 @@ export default function Profile({ ...props }) {
     }
   }
 
+  
   return (
     <>
       <Card className="m-3">

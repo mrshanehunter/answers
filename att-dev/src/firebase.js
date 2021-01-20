@@ -65,6 +65,7 @@ export const askUpdate = async currentUser => {
     const increment = firebase.firestore.FieldValue.increment(-1)
     const userDocument = db.collection(`users`).doc(`${currentUser.uid}`)
     await userDocument.update({ balance: increment })
+    console.log(userDocument)
   } catch (error) {
     console.error("Error updating balance", error)
   }

@@ -12,8 +12,19 @@ import FirstCheckout from "../components/FirstCheckout"
 import PaySuccess from "../components/PaySuccess"
 import PayReject from "../components/PayReject"
 import AskApp from "../components/AskApp"
+import AskAnswer from "../components/AskAnswer"
+import AskReject from "../components/AskReject"
 
-export default function Application({ ...props }) {
+export default function Application(props) {
+  
+   
+ 
+
+
+
+
+
+
   return (
     <Layout>
       <Container
@@ -33,7 +44,9 @@ export default function Application({ ...props }) {
             />
             <PrivateRoute path="/app/pay-success" component={PaySuccess} />
             <PrivateRoute path="/app/pay-reject" component={PayReject} />
-            <PrivateRoute path="/app/ask-app" component={AskApp} />
+            <PrivateRoute path="/app/ask-app" component={AskApp} props={props} />
+            <PrivateRoute path="/app/ask-answer" component={AskAnswer} props={props} />
+            <PrivateRoute path="/app/ask-balance" component={AskReject} props={props} />
             <SignUp path="/app/signup" />
             <Login path="/app" />
             <ForgotPassword path="/app/forgot-password" />

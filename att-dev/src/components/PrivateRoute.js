@@ -3,8 +3,10 @@ import { navigate } from "gatsby"
 import { useAuth } from "../contexts/AuthContext"
 
 const PrivateRoute = ({ component: Component, location, ...rest }) => {
-  const { currentUser } = useAuth()
-  
+  const { currentUser, loading } = useAuth()
+  if (loading) {
+    return <div>loading ...</div>
+  }
   if (!currentUser && location.pathname !== "/app") {
     navigate("/app")
     return null

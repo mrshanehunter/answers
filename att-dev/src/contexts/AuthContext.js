@@ -43,17 +43,8 @@ export function AuthProvider({ children }) {
     return balanceUpdate(currentUser, qty)
   }
 
-  async function finishUpdate() {
-    const userRef = db.collection(`users`).doc(`${currentUser.uid}`)
-    await userRef
-      .get()
-      .then(function (doc) {
-        const userUpd = doc.data()
-        setCurrentUser(userUpd)
-      })
-      .catch(function (error) {
-        alert.console("Error updating:", error)
-      })
+  function finishUpdate(upd) {
+    return setCurrentUser(upd)
   }
 
   useEffect(() => {
@@ -66,6 +57,8 @@ export function AuthProvider({ children }) {
 
     return unsubscribe
   }, [])
+
+
 
   const value = {
     currentUser,

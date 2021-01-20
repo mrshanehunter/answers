@@ -43,7 +43,7 @@ h4 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   font-family: "aviano-flare", sans-serif;
   font-weight: 700;   
   font-style: normal;

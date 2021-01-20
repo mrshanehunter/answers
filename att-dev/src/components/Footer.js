@@ -1,27 +1,47 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import styled from "styled-components"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const FooterStyles = styled.footer`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
-  font-size: 1rem;
+  width: 100%;
+  font-size: 0.5vw;
   text-align: center;
-  background: var(--shade);
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  padding-top: 0.25rem;
+  background: var(--shaded);
+  border-radius: 1rem;
+  margin: 0 auto;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  box-shadow: 0 0 0.2rem rgba(0,0,0,0.8);
   p {
-    padding-top: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--gold)
+  }
+  a {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--gold);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
 export default function Footer() {
   return (
+    <Container className="d-flex p-2 mb-1" style={{background: `rgba(65, 36, 86, 0.35)`,borderRadius: `1rem`,
+   }}>
     <FooterStyles>
-      <p>&copy; {new Date().getFullYear()} Ask The Tarot</p>
-      <p>Privacy</p>
-      <p>Terms</p>
+      <div className="d-flex flex-row w-75 mx-auto justify-content-center"> 
+      <AniLink paintDrip to="/privacy" hex="#412456" duration={1} className="w-50 pt-2 text-center">Privacy</AniLink>
+      <AniLink paintDrip to="/terms" hex="#412456" duration={1} className="w-50 pt-2 text-center">Terms</AniLink>
+      </div>
+      <div className="d-flex w-100 m-0 p-0">
+      <p className="w-100 pb-2 text-center">&copy; {new Date().getFullYear()} Ask The Tarot. All Rights Reserverd</p>
+      </div>
+
     </FooterStyles>
+    </Container>
   )
 }
