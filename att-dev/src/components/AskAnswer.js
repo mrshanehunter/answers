@@ -31,7 +31,7 @@ export default function AskAnswer(props) {
       }
     }
   `)
-
+  
   const { currentUser } = useAuth()
   const random = Math.floor(Math.random() * 78)
   const card = cards.nodes[`${random}`]
@@ -51,6 +51,7 @@ export default function AskAnswer(props) {
     return () => {
       unsub()
     }
+   
   })
 
   return (
@@ -93,17 +94,32 @@ export default function AskAnswer(props) {
         <Reveal delay={12000}>
           <Fade delay={14000} duration={5000}>
             <Card.Body className="w-100">
-              <AniLink
-                paintDrip
-                to="/app/ask-app"
-                hex="#412456"
-                duration={0.25}
-                className="d-flex w-100 p-0 m-0"
+              {(currentUser.balance === 0) 
+              ?  <AniLink
+                 paintDrip
+                 to="/app/ask-balance"
+                 hex="#412456"
+                 duration={0.25}
+                 className="d-flex w-100 p-0 m-0"
+              >
+                <Button className="w-100 ml-auto mr-auto text-center">
+                  Need More Answers?
+                </Button>
+              </AniLink>
+            :  <AniLink
+                 paintDrip
+                 to="/app/ask-app"
+                 hex="#412456"
+                 duration={0.25}
+                 className="d-flex w-100 p-0 m-0"
               >
                 <Button className="w-100 ml-auto mr-auto text-center">
                   Ask Another Question?
                 </Button>
-              </AniLink>
+              </AniLink> 
+            
+            
+            }
             </Card.Body>
           </Fade>
         </Reveal>

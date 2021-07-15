@@ -14,7 +14,8 @@ const app = firebase.initializeApp({
 export const auth = app.auth()
 export const db = app.firestore()
 export default app
-export const integer = `${process.env.GATSBY_FIREBASE_INCREMENT}`
+export const integer = process.env.GATSBY_FIREBASE_INCREMENT * -1;
+
 
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return

@@ -10,7 +10,7 @@ export default function AskReject() {
     <>
       <Card className="mb-4">
         <Card.Body>
-          <h3 className="text-center">You don't have enough tokens {currentUser.displayName}.</h3>
+          <h3 className="text-center">Your token balance is {currentUser.balance} {currentUser.displayName}.</h3>
           <h3 className="text-center">To Ask The Tarot more questions, you'll need more tokens.</h3>
           
         </Card.Body>
