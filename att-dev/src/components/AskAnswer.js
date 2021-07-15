@@ -68,8 +68,8 @@ export default function AskAnswer(props) {
                 <Img
                   fluid={card.image.asset.fluid}
                   style={{
-                    width: `170px`,
-                    height: `285px`,
+                    width: `270px`,
+                    height: `485px`,
                     margin: `0 auto 1rem`,
                     boxShadow: `0 0 0.75rem rgba(0,0,0,0.5)`,
                   }}
@@ -83,7 +83,7 @@ export default function AskAnswer(props) {
               </Zoom>
             </Fade>
             <Fade delay={10500} duration={9500}>
-              <p style={{ fontSize: `4vw` }}>{card.response}</p>
+              <p style={{ fontSize: `1.8rem`, textShadow: `1px 1px 1px var(--black)` }}>{card.response}</p>
             </Fade>
           </Card.Body>
         </Reveal>
@@ -97,7 +97,7 @@ export default function AskAnswer(props) {
                 paintDrip
                 to="/app/ask-app"
                 hex="#412456"
-                duration={1}
+                duration={0.25}
                 className="d-flex w-100 p-0 m-0"
               >
                 <Button className="w-100 ml-auto mr-auto text-center">

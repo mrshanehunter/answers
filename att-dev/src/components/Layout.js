@@ -12,6 +12,7 @@ export default function Layout({ children }) {
     <>
     <GlobalStyles />
     <Typography />
+    <Container className="fullScreen">
     <Container className="borderStyle"> 
      <Header />
     <Container className="contentStyle">
@@ -19,7 +20,7 @@ export default function Layout({ children }) {
       </Container>
       <Footer />
       </Container>
-
+</Container>
     </>
   )
 }

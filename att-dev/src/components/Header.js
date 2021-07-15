@@ -21,6 +21,13 @@ const StyledLogo = styled.div`
   margin-bottom: 0.5rem;
   padding-left: 0;
   margin-left: 0;
+  &:hover {
+    animation-name: spin;
+    animation-duration: 50ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    border-radius: 50%;
+  }
 `
 
 const StyledNavigation = styled.div`
@@ -42,7 +49,9 @@ const StyledNavigation = styled.div`
   a {
     color: var(--gold);
     padding-left: 1rem;
-    font-size: 5vw;
+    font-size: 1.8rem;
+    letter-spacing: 0.15rem;
+    text-shadow: 1px 1px 1px var(--black);
   }
 `
 
@@ -59,18 +68,18 @@ export default function Header() {
       }}
     >
       <StyledLogo>
-        <AniLink paintDrip to="/" hex="#412456" duration={1}>
+        <AniLink paintDrip to="/" hex="#412456" duration={0.25}>
           <Logo />
         </AniLink>
       </StyledLogo>
       <StyledNavigation>
         {currentUser ? (
-          <AniLink paintDrip to="/app/profile" hex="#412456" duration={1}>
+          <AniLink paintDrip to="/app/profile" hex="#412456" duration={0.25}>
             Profile
           </AniLink>
         ) : (
-          <AniLink paintDrip to="/app/" hex="#412456" duration={1}>
-            Log In
+          <AniLink paintDrip to="/app/" hex="#412456" duration={0.25}>
+            Ask
           </AniLink>
         )}
       </StyledNavigation>

@@ -18,7 +18,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "atttarotcard.png" }) {
         childImageSharp {
-          fluid(maxWidth: 250) {
+          fluid (maxWidth: 300) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -30,7 +30,7 @@ const Image = () => {
     return <div>Picture not found</div>
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} style={{ height: `450px`, width: `260px`}} />
 }
 
 export default Image

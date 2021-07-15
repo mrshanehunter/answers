@@ -18,6 +18,7 @@ h2 {
   text-rendering: optimizeLegibility;
   font-size: 1.8rem;
   line-height: 1.1;
+  letter-spacing: 0.15rem;
 }
 h3 {
   margin-left: 0;
@@ -34,6 +35,8 @@ h3 {
   text-rendering: optimizeLegibility;
   font-size: 1.6rem;
   line-height: 1.1;
+  letter-spacing: 0.15rem;
+  text-shadow: 1px 1px 1px var(--black);
 }
 h4 {
   margin-left: 0;
@@ -50,6 +53,8 @@ h4 {
   text-rendering: optimizeLegibility;
   font-size: 1.4rem;
   line-height: 1.1;
+  letter-spacing: 0.1rem;
+  text-shadow: 1px 1px 1px var(--black);
 }
 h5 {
   margin-left: 0;
@@ -67,7 +72,10 @@ h5 {
   text-rendering: optimizeLegibility;
   font-size: 1.2rem;
   line-height: 1.1;
+  letter-spacing: 0.1rem;
+  text-shadow: 1px 1px 1px var(--black);
 }
+
 h6 {
   margin-left: 0;
   margin-right: 0;

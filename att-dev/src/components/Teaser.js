@@ -41,15 +41,15 @@ export default function Teaser() {
     <>
       <Reveal delay={2000} duration={2000}>
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedFrontToBack={0.99} flipSpeedBackToFront={0.1}>
-          <Card style={{ height: `560px` }}>
-            <Card.Body>
+          <Card className="mx-auto" style={{ height: `570px`, maxWidth: `400px`}}>
+            <Card.Body className="mx-auto">
               <Image style={{ paddingTop: `20px` }} />
             </Card.Body>
             <div className="d-flex justify-content-center p-3">
               {" "}
               <Button
                 type="button"
-                className="w-100 mx-auto"
+                className="teaser-Card-Button"
                 onClick={handleClick}
               >
                 Ask The Tarot
@@ -57,7 +57,7 @@ export default function Teaser() {
             </div>
           </Card>
 
-          <Card style={{ height: `560px` }}>
+          <Card className="mx-auto" style={{ height: `570px`, maxWidth: `400px` }}>
          
             <Card.Body className="d-flex-column text-center">
               <h5>{card.card_name}</h5>
@@ -74,15 +74,15 @@ export default function Teaser() {
               />
 
               <h4>{card.yes_or_no}</h4>
-              <div style={{ width: `240px`, height: `90px` }}>
-                <p style={{ fontSize: `4.5vw` }}>{card.response}</p>
+              <div className="teaser-Card-Response">
+                <p>{card.response}</p>
               </div>
             </Card.Body>
            
             <div className="d-flex justify-content-center p-3">
             <Button 
             type="button"
-            className="w-100 mx-auto"
+            className="teaser-Card-Button"
             onClick={handleClick}>Another Question?</Button>
             </div>
            

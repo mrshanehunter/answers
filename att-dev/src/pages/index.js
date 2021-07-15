@@ -8,9 +8,9 @@ import Teaser from "../components/Teaser"
 const IndexPage = ({...props}) => (
   <Layout>
    <Teaser />
-  <Card className="mt-4">
-    <Card.Body>
-      <AniLink className="w-100" paintDrip to="/faq" hex="#412456" duration={1}>
+  <Card className="mt-4" style={{ background: `transparent`, boxShadow: `none`}}>
+    <Card.Body className="hiw-Card-Body">
+      <AniLink className="w-100" paintDrip to="/faq" hex="#412456" duration={0.25}>
         <Button  type="button" className="w-100">How It Works</Button>
       </AniLink>
     </Card.Body>

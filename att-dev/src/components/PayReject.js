@@ -17,7 +17,7 @@ export default function PayReject() {
 
      <Card className="mt-4">
       <Card.Body>
-      <AniLink paintDrip to="/app/profile" hex="#412456" duration={1}>
+      <AniLink paintDrip to="/app/profile" hex="#412456" duration={0.25}>
         <Button className="w-100" type="button">Click here to continue</Button>
       </AniLink>
       </Card.Body>

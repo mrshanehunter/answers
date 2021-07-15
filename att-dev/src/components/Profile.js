@@ -21,7 +21,7 @@ export default function Profile({ ...props }) {
   }
 
   const handleApp = () => {
-    if (currentUser.balance < 2) {
+    if (currentUser.balance === 0) {
       alert("You will need more tokens to Ask The Tarot")
     } else {
       navigate("/app/ask-app")
@@ -45,7 +45,7 @@ export default function Profile({ ...props }) {
       </Card>
       <Card className="mb-4">
         <Card.Body>
-          <h4 className="text-center mb-4">Profile</h4>
+          <h4 className="text-center mb-4">Your Details</h4>
           {error && <Alert variant="danger">{error}</Alert>}
           <p>
             <strong>Tokens:</strong> {currentUser.balance}

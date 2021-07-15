@@ -45,10 +45,10 @@ export default function AskApp() {
   return (
     <>
       {(count > 1)
-      ? <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `rgba(251, 201, 38, 0.5)`, fontSize: `4.75vw`}}>You can Ask The Tarot {count} questions</p> </Container>
+      ? <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `rgba(251, 201, 38, 0.5)`, fontSize: `1.8rem`}}>{count} questions remaining</p> </Container>
       : (count === 1)
-      ? <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `4.75vw`}}>{currentUser.displayName}, this is your last question</p></Container>
-      : <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `4.75vw`}}>{currentUser.displayName}, you're out of tokens</p></Container>
+      ? <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `1.8rem`}}>{currentUser.displayName}, this is your last question</p></Container>
+      : <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `1.8rem`}}>{currentUser.displayName}, you're out of tokens</p></Container>
 
     }
       
@@ -57,7 +57,7 @@ export default function AskApp() {
       {error && <Alert variant="danger">{error}</Alert>}
       
         <Card>
-          <Card.Body>
+          <Card.Body className="mx-auto">
             <Image />
           </Card.Body>
           

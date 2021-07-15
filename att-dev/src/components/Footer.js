@@ -34,8 +34,8 @@ export default function Footer() {
    }}>
     <FooterStyles>
       <div className="d-flex flex-row w-75 mx-auto justify-content-center"> 
-      <AniLink paintDrip to="/privacy" hex="#412456" duration={1} className="w-50 pt-2 text-center">Privacy</AniLink>
-      <AniLink paintDrip to="/terms" hex="#412456" duration={1} className="w-50 pt-2 text-center">Terms</AniLink>
+      <AniLink paintDrip to="/privacy" hex="#412456" duration={0.25} className="w-50 pt-2 text-center">Privacy</AniLink>
+      <AniLink paintDrip to="/terms" hex="#412456" duration={0.25} className="w-50 pt-2 text-center">Terms</AniLink>
       </div>
       <div className="d-flex w-100 m-0 p-0">
       <p className="w-100 pb-2 text-center">&copy; {new Date().getFullYear()} Ask The Tarot. All Rights Reserverd</p>

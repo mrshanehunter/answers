@@ -6,11 +6,11 @@ const GlobalStyles = createGlobalStyle`
 
 :root {
   --purple: #412456;
-  --gold: rgba(251, 201, 38, 0.5);
+  --gold: rgba(251, 201, 38, 0.75);
   --yellow: rgb(245,223,77);
   --green: #31ab1f;
   --white: #fefefa;
-  --black: #000000;
+  --black: #070707;
   --shade: rgba(65, 36, 86, 0.35);
   --shaded: rgba(65, 36, 86, 0.5);
 }
@@ -59,9 +59,21 @@ img {
   padding-right: 0;
 }
 
+.fullScreen {
+  min-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 .borderStyle {
   background: var(--shaded);
-  width: 95vw;
+  
+  width: 95%;
   margin: 1rem auto;
   border-radius: 1rem;
   padding: 0;
@@ -120,6 +132,49 @@ img {
     color: var(--yellow);
   }
 }
+
+.teaser-Card-Body {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.teaser-Card-Button {
+  width: 100%;
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    width: 75%;
+  }
+}
+
+.teaser-Card-Response {
+  margin: 0 auto;
+  width: 250px;
+  height: 100px;
+  p {
+    font-size: 1.25rem;
+  }
+}
+
+.hiw-Card-Body {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 50%;
+    margin: 0 auto;
+  }
+  @media (min-width: 1024px) {
+    width: 25%;
+    margin: 0 auto;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
+
 `;
 
 export default GlobalStyles
