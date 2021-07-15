@@ -14,6 +14,7 @@ const app = firebase.initializeApp({
 export const auth = app.auth()
 export const db = app.firestore()
 export default app
+export const integer = `${process.env.GATSBY_FIREBASE_INCREMENT}`
 
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return
@@ -62,7 +63,7 @@ export const balanceUpdate = async (currentUser, qty) => {
 export const askUpdate = async currentUser => {
   if (!currentUser) return null
   try {
-    const increment = firebase.firestore.FieldValue.increment(-1)
+    const increment = firebase.firestore.FieldValue.increment(integer)
     const userDocument = db.collection(`users`).doc(`${currentUser.uid}`)
     await userDocument.update({ balance: increment })
   } catch (error) {
