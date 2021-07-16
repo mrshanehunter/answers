@@ -113,6 +113,7 @@ img {
 
 .btn {
   width: 75%;
+  margin: 0 auto;
   border-radius: 1rem;
   border: thin solid var(--gold);
   background: var(--shaded);
@@ -124,11 +125,9 @@ img {
   }
 }
 
-.logOut {
-  border: 0.05rem solid var(--gold);
-  background: var(--shaded);  
-}
+
 .log {
+  margin: 0 auto;
   color: var(--gold);
   font-size: 1.2rem;
   &:hover {

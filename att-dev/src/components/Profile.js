@@ -66,7 +66,7 @@ export default function Profile({ ...props }) {
       </Card>
 
       <TokenPurchase page={props.path} welcome={false} />
-      <Card className="w-100 mb-1 logOut">
+      <Card className="w-100 mb-1">
         <Button className="log btn" variant="link" onClick={() => handleLogout()}>
           Log Out
         </Button>
