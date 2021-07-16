@@ -49,7 +49,7 @@ export default function Teaser() {
               {" "}
               <Button
                 type="button"
-                className="teaser-Card-Button"
+                className="teaser-Card-Button btn"
                 onClick={handleClick}
               >
                 Ask The Tarot
