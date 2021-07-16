@@ -22,7 +22,7 @@ export default function Profile({ ...props }) {
   }
 
   const handleApp = () => {
-    if (currentUser.balance === 0) {
+    if (currentUser.balance < 1) {
       alert("You will need more tokens to Ask The Tarot")
     } else {
       navigate("/app/ask-app")
@@ -38,7 +38,7 @@ export default function Profile({ ...props }) {
           </h4>
           <Button
             className="w-100 d-flex justify-content-center"
-            onClick={handleApp}
+            onClick={() => handleApp}
           >
             <Logo />
           </Button>
@@ -62,7 +62,7 @@ export default function Profile({ ...props }) {
 
       <TokenPurchase page={props.path} welcome={false} />
       <Card className="mb-1 logOut">
-        <Button className="log" variant="link" onClick={handleLogout}>
+        <Button className="log" variant="link" onClick={() => handleLogout}>
           Log Out
         </Button>
       </Card>
