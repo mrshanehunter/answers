@@ -1,5 +1,6 @@
-import { navigate } from "gatsby"
+
 import React, { useState } from "react"
+import { navigate } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Alert from "react-bootstrap/Alert"
 import Card from "react-bootstrap/Card"
@@ -10,13 +11,13 @@ import { askUpdate } from "../firebase"
 import AskReject from "./AskReject"
 import AskAnswer from "./AskAnswer"
 
-export default function AskApp({ ...props }) {
+export default function AskApp() {
   const { currentUser } = useAuth()
   const numValue = process.env.GATSBY_FIREBASE_INCREMENT
   const [count, setCount] = useState(currentUser.balance)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
-  const ranVal = Math.floor(Math.random()*78);   
+     
   const balanceValue = process.env.GATSBY_BALANCE_VALUE
   setError("Something has gone wrong with the shuffle")
 
@@ -31,7 +32,7 @@ export default function AskApp({ ...props }) {
       setCount(count - numValue)
       setLoading(!loading)
       navigate("/app/ask-answer")
-      return <AskAnswer ranVal={ranVal} />
+      return <AskAnswer />
     }}
 
    
