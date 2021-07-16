@@ -59,7 +59,7 @@ export default function Profile({ ...props }) {
           <p>
             <strong>Email:</strong> {currentUser.email}
           </p>
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
+          <Link to="/ask-update-profile" className="btn btn-primary w-100 mt-3">
             Update Profile
           </Link>
         </Card.Body>

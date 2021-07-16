@@ -2,10 +2,10 @@ import React from "react"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Layout from "../components/Layout"
+
 
 const NotFoundPage = () => (
-  <Layout>
+  <>
     <Card className="mt-5 mb-5 pt-5 pb-5">
       <Card.Body className="text-center">
         <h3>404:</h3>
@@ -18,14 +18,14 @@ const NotFoundPage = () => (
       </Card>
       <Card className="mb-5">
       <Card.Body>
-      <AniLink paintDrip to="/app" hex="#412456" duration={1}>
+      <AniLink paintDrip to="/" hex="#412456" duration={1}>
         <Button type="button" className="w-100 mr-auto ml auto">
           Ask It Now!
         </Button>
       </AniLink>
       </Card.Body>
     </Card>
-  </Layout>
+  </>
 )
 
 export default NotFoundPage

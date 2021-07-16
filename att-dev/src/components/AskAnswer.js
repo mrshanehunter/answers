@@ -75,8 +75,8 @@ export default function AskAnswer({ ...props }) {
                 <Img
                   fluid={card.image.asset.fluid}
                   style={{
-                    width: `270px`,
-                    height: `485px`,
+                    width: `265px`,
+                    height: `480px`,
                     margin: `0 auto 1rem`,
                     padding: `0px`,
                     boxShadow: `0 0 0.75rem rgba(0,0,0,0.5)`,
