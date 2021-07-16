@@ -43,10 +43,12 @@ export default function AskAnswer({ ...props }) {
       .collection(`users`)
       .doc(`${currentUser.uid}`)
       .onSnapshot(doc => {
-        const user = doc.data()
-        if (state.balance > user.balance) {
-        currentUser.balance = user.balance
-        setState(state => [{...state, balance: user.balance}])
+        const data = doc.data()
+        let balance = data.balance
+        
+        if (state.balance > balance) {
+        currentUser.balance = balance
+        setState(state => [{...state, balance: balance}])
         }
       })
     return () => {
