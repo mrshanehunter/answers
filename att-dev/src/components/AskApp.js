@@ -21,7 +21,7 @@ export default function AskApp() {
   const balanceValue = process.env.GATSBY_BALANCE_VALUE
   setError("Something has gone wrong with the shuffle")
 
-   const clickHandler = async (e) => {
+   const clickHandler = async () => {
     e.preventDefault()
     setLoading(loading)
     if (count === balanceValue) {
@@ -60,7 +60,7 @@ export default function AskApp() {
        <Card className="mt-3">
          <Card.Body>
           
-         <Button disabled={loading} className="w-100 ml-auto mr-auto text-center" onClick={e => {clickHandler(e)}}>
+         <Button disabled={loading} className="w-100 ml-auto mr-auto text-center" onClick={() => clickHandler}>
             Ask The Tarot
           </Button>
         
