@@ -32,7 +32,7 @@ export default function UpdateProfile({ ...props }) {
 
     Promise.all(promises)
       .then(() => {
-        navigate("/app/profile")
+        navigate("/profile")
       })
       .catch(() => {
         setError("Failed to update account")
@@ -81,7 +81,7 @@ export default function UpdateProfile({ ...props }) {
         </Card.Body>
       </Card>
       <Card className="logOut w-100 text-center mt-2">
-        <Link className="log" to="/app/profile">Cancel</Link>
+        <Link className="log" to="profile">Cancel</Link>
       </Card>
     </>
   )

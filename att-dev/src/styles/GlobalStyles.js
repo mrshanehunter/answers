@@ -82,7 +82,7 @@ img {
 
 .contentStyle {
   background: var(--shaded);
-  width: 95%;
+  width: 90%;
   margin: 1rem auto;
   border-radius: 1rem;
   padding-top: 0.75rem;

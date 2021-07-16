@@ -4,7 +4,8 @@ import { useAuth } from "../contexts/AuthContext"
 import { Link, navigate } from "gatsby"
 import Logo from "./Logo"
 import TokenPurchase from "./TokenPurchase"
-import AskApp from "./AskApp"
+import Login from "./Login"
+
 
 export default function Profile({ ...props }) {
   const [error, setError] = useState("")
@@ -16,7 +17,7 @@ export default function Profile({ ...props }) {
 
     try {
       await logout()
-      navigate("/app")
+      navigate("/ask-login")
     } catch {
       setError("Failed to log out")
     }
@@ -26,20 +27,23 @@ export default function Profile({ ...props }) {
     if (currentUser.balance < 1) {
       alert("You will need more tokens to Ask The Tarot")
     } else {
-      <AskApp page={props.path} />
+      navigate("/ask-app")
     }
   }
 
   return (
-    <>
-      <Card className="mt-1 mb-4">
+  
+    !currentUser ?  <Login />
+      :
+        <>
+       <Card className="mt-1 mb-4">
         <Card.Body>
           <h4 className="text-center">
             What's your question {currentUser.displayName}?
           </h4>
           <Button
             className="w-100 d-flex justify-content-center"
-            onClick={() => handleApp}
+            onClick={() => handleApp()}
           >
             <Logo />
           </Button>
@@ -55,7 +59,7 @@ export default function Profile({ ...props }) {
           <p>
             <strong>Email:</strong> {currentUser.email}
           </p>
-          <Link to="/app/update-profile" className="btn btn-primary w-100 mt-3">
+          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
             Update Profile
           </Link>
         </Card.Body>
@@ -63,10 +67,11 @@ export default function Profile({ ...props }) {
 
       <TokenPurchase page={props.path} welcome={false} />
       <Card className="mb-1 logOut">
-        <Button className="log" variant="link" onClick={() => handleLogout}>
+        <Button className="log" variant="link" onClick={() => handleLogout()}>
           Log Out
         </Button>
       </Card>
-    </>
-  )
-}
+       </>
+  )  
+    }
+

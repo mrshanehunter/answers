@@ -77,11 +77,11 @@ export default function Header({ ...props }) {
       </StyledLogo>
       <StyledNavigation>
         {currentUser ? (
-          <AniLink paintDrip to="/app/profile" hex="#412456" duration={0.25}>
+          <AniLink paintDrip to="/profile" hex="#412456" duration={0.25}>
             Profile
           </AniLink>
         ) : (
-          <AniLink paintDrip to="/app/" hex="#412456" duration={0.25}>
+          <AniLink paintDrip to="/ask-login" hex="#412456" duration={0.25}>
             Ask
           </AniLink>
         )}

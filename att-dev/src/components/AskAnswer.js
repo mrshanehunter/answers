@@ -11,6 +11,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { db } from "../firebase" 
 
 
+
 export default function AskAnswer({ ...props }) {
   const { cards } = useStaticQuery(graphql`
     query {
@@ -54,8 +55,12 @@ export default function AskAnswer({ ...props }) {
    
   })
 
+  
+  
+  
   return (
-    <>
+   
+      <>
       <Card>
         <Reveal>
           <Card.Body className="d-flex-column text-center">
@@ -97,7 +102,7 @@ export default function AskAnswer({ ...props }) {
               {(currentUser.balance === 0) 
               ?  <AniLink
                  paintDrip
-                 to="/app/ask-balance"
+                 to="/ask-balance"
                  hex="#412456"
                  duration={0.25}
                  className="d-flex w-100 p-0 m-0"
@@ -108,7 +113,7 @@ export default function AskAnswer({ ...props }) {
               </AniLink>
             :  <AniLink
                  paintDrip
-                 to="/app/ask-app"
+                 to="/ask-app"
                  hex="#412456"
                  duration={0.25}
                  className="d-flex w-100 p-0 m-0"
@@ -124,6 +129,9 @@ export default function AskAnswer({ ...props }) {
           </Fade>
         </Reveal>
       </Card>
+
     </>
+         
   )
 }
+

@@ -35,7 +35,7 @@ export default function Signup() {
     }
 
     setLoading(false)
-    navigate("/app/first-checkout")
+    navigate("/ask-first-checkout")
   }
 
   return (
@@ -68,7 +68,7 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/app">Log In</Link>
+        Already have an account? <Link to="/ask-login">Log In</Link>
       </div>
     </>
   )

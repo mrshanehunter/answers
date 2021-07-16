@@ -18,7 +18,7 @@ export default function AskReject({ ...props }) {
 
       <Card className="mt-4">
         <Card.Body>
-        <AniLink paintDrip to="/app/profile" hex="#412456" duration={1}>
+        <AniLink paintDrip to="/profile" hex="#412456" duration={1}>
             <Button className="w-100">Get Some Now</Button>
           </AniLink>
         </Card.Body>

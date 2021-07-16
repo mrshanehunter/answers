@@ -1,12 +1,11 @@
 import React from "react"
-import Layout from "../components/Layout"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Teaser from "../components/Teaser"
 
 const IndexPage = ({...props}) => (
-  <Layout>
+  <>
    <Teaser />
   <Card className="mt-4" style={{ background: `transparent`, boxShadow: `none`}}>
     <Card.Body className="hiw-Card-Body">
@@ -16,7 +15,7 @@ const IndexPage = ({...props}) => (
     </Card.Body>
   </Card>
 
-  </Layout>
+  </>
 )
 
 export default IndexPage

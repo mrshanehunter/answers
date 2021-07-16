@@ -21,7 +21,7 @@ export default function PaySuccess({ ...props }) {
       console.error(error)
     }
     setLoading(false)
-    navigate("/app/profile", { replace: true })
+    navigate("/profile", { replace: true })
   }
 
   return (
