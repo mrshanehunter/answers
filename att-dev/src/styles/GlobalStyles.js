@@ -125,7 +125,7 @@ img {
 }
 
 .logOut {
-  border: 1px solid var(--gold);
+  border: 0.05rem solid var(--gold);
   background: var(--shaded);  
 }
 .log {
