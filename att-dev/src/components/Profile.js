@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { Link, navigate } from "gatsby"
 import Logo from "./Logo"
 import TokenPurchase from "./TokenPurchase"
+import AskApp from "./AskApp"
 
 export default function Profile({ ...props }) {
   const [error, setError] = useState("")
@@ -25,7 +26,7 @@ export default function Profile({ ...props }) {
     if (currentUser.balance < 1) {
       alert("You will need more tokens to Ask The Tarot")
     } else {
-      navigate("/app/ask-app")
+      <AskApp page={props.path} />
     }
   }
 
