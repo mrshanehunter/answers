@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import React, { useEffect, useState } from "react"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"

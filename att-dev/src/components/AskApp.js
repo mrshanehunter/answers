@@ -1,7 +1,7 @@
 
-import React, { useState } from "react"
+import React from "react"
 import { navigate } from "gatsby"
-import Alert from "react-bootstrap/Alert"
+
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import Image from "./Image"
@@ -10,25 +10,24 @@ import { askUpdate } from "../firebase"
 
 import AskAnswer from "./AskAnswer"
 
+
+
 export default function AskApp() {
   const { currentUser } = useAuth()
   
  
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState("")
-     
  
-  setError("Something has gone wrong with the shuffle")
+
 
    const clickHandler = async () => {
     e.preventDefault()
-    setLoading(loading)
+    
     
     await askUpdate(currentUser)
    
-      setLoading(!loading)
+      
       navigate("/app/ask-answer")
-      return <AskAnswer />
+      
   }
 
    
@@ -44,7 +43,7 @@ export default function AskApp() {
       
       
       
-      {error && <Alert variant="danger">{error}</Alert>}
+     
       
         <Card>
           <Card.Body className="mx-auto">
