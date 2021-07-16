@@ -10,7 +10,7 @@ const IndexPage = ({...props}) => (
   <Card className="mt-4" style={{ background: `transparent`, boxShadow: `none`}}>
     <Card.Body className="hiw-Card-Body">
       <AniLink className="w-100" paintDrip to="/faq" hex="#412456" duration={0.25}>
-        <Button  type="button" className="w-100">How It Works</Button>
+        <Button  type="button" className="w-100 btn">How It Works</Button>
       </AniLink>
     </Card.Body>
   </Card>
