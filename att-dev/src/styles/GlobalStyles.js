@@ -93,6 +93,7 @@ img {
 
 
 .card {
+  max-width: 475px;
   background: var(--shade);
   border: none;
   border-radius: 1rem;
