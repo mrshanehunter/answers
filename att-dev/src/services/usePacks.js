@@ -2,11 +2,7 @@ import { useState, useContext } from "react"
 import PackContext from "../contexts/PackContext"
 import { loadStripe } from "@stripe/stripe-js"
 
-const stripePromise = loadStripe(
-  "pk_test_51HutPyJ23KTXEuACIR2uDScFGDOfPyRFxTpMDloRlrELgTKxuyJ6bYIrPQtlFJzC35rW5ACFweLVzq3A1tO34yeO00JSUz07Wg"
-)
-
-
+const stripePromise = loadStripe(process.env.GATSBY_STRIPE_KEY)
 
 export default function usePacks({ tokens, data }) {
   const [order, setOrder] = useContext(PackContext)

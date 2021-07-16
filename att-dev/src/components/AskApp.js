@@ -46,9 +46,8 @@ export default function AskApp() {
       : (count === 1)
       ? <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `1.8rem`}}>{currentUser.displayName}, this is your last question</p></Container>
       : <AskReject />  
-      // :  <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `#fefefa`, fontSize: `1.8rem`}}>{currentUser.displayName}, you are out of tokens</p></Container>
-
-      };
+      
+      }
       
       
       
