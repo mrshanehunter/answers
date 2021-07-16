@@ -24,16 +24,13 @@ export default function AskApp() {
    const clickHandler = async () => {
     e.preventDefault()
     setLoading(loading)
-    if (count === balanceValue) {
-      navigate("/app/ask-balance")
-      return <AskReject />
-    } else {
+    
     await askUpdate(currentUser)
       setCount(count - numValue);
       setLoading(!loading)
       navigate("/app/ask-answer")
       return <AskAnswer />
-    }}
+  }
 
    
 
