@@ -78,6 +78,7 @@ export default function AskAnswer({ ...props }) {
                     width: `270px`,
                     height: `485px`,
                     margin: `0 auto 1rem`,
+                    padding: `0px`,
                     boxShadow: `0 0 0.75rem rgba(0,0,0,0.5)`,
                   }}
                   alt={card.card_name}
