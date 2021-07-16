@@ -98,6 +98,7 @@ img {
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
 }
 
 .link {
@@ -111,6 +112,7 @@ img {
 }
 
 .btn {
+  width: 75%;
   border-radius: 1rem;
   border: thin solid var(--gold);
   background: var(--shaded);
@@ -162,11 +164,11 @@ img {
 .hiw-Card-Body {
   width: 100%;
   @media (min-width: 768px) {
-    width: 50%;
+    /* width: 50%; */
     margin: 0 auto;
   }
   @media (min-width: 1024px) {
-    width: 25%;
+    /* width: 25%; */
     margin: 0 auto;
   }
 }
