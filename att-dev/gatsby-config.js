@@ -44,7 +44,7 @@ module.exports = {
       options: {
         projectId: `fauyll4n`,
         dataset: `production`,
-        watchMode: true,
+        watchMode: false,
         token: process.env.SANITY_TOKEN,
       },
     },

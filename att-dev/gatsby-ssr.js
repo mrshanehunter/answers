@@ -10,8 +10,5 @@ export const wrapRootElement = ({ element }) => {
   )
 }
 
-export const onRouteUpdateDelayed = () => {
-  console.log("Show a loading indicator now")
-}
 
 
