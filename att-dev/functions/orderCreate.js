@@ -10,7 +10,7 @@ module.exports.handler = async (event, context, callback) => {
     payment_method_types: ["card"],
     line_items: JSON.parse(event.body),
     mode: "payment",
-    success_url: redirectURLS + "?session_id={CHECKOUT_SESSION_ID}",
+    success_url: redirectURLS,
     cancel_url: redirectURLR,
   })
 

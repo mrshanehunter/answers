@@ -48,7 +48,7 @@ export default function TokenPurchase({ ...props }) {
               onClick={e => {
                 let data = e.currentTarget.name
                 addToOrder(data)
-                console.log(data)
+               
               }}
             >
               {pack.pack_name} for ${pack.pack_price_display / 100}
