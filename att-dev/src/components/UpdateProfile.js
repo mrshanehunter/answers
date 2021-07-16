@@ -80,8 +80,8 @@ export default function UpdateProfile({ ...props }) {
           </Form>
         </Card.Body>
       </Card>
-      <Card className="logOut w-100 text-center mt-2">
-        <Link className="log btn" to="/profile">Cancel</Link>
+      <Card className="w-100 text-center mt-2 p-3">
+        <Link className="btn" to="/profile">Cancel</Link>
       </Card>
     </>
   )
