@@ -43,8 +43,8 @@ export default function AskAnswer({ ...props }) {
       .collection(`users`)
       .doc(`${currentUser.uid}`)
       .onSnapshot(doc => {
-        const data = doc.data()
-        let balance = data.balance;
+        const dataUpdate = doc.data()
+        let balance = dataUpdate.balance;
         if (state.balance > balance) {
         currentUser.balance = balance
         setState(state => [{...state, balance: balance}])
@@ -99,7 +99,7 @@ export default function AskAnswer({ ...props }) {
 
       <Card className="mt-3">
         <Reveal delay={10000}>
-          <Fade delay={12000} duration={5000}>
+          <Fade delay={10000} duration={5000}>
             <Card.Body className="w-100">
               {(currentUser.balance === 0) 
               ?  <AniLink
