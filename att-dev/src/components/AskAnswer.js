@@ -44,8 +44,7 @@ export default function AskAnswer({ ...props }) {
       .doc(`${currentUser.uid}`)
       .onSnapshot(doc => {
         const data = doc.data()
-        let balance = data.balance
-        
+        let balance = data.balance;
         if (state.balance > balance) {
         currentUser.balance = balance
         setState(state => [{...state, balance: balance}])
