@@ -8,10 +8,12 @@ export default function Signup() {
   const displayNameRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const { signup, userdetails } = useAuth()
+ 
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
+   const { signup, userdetails } = useAuth()
+  
   async function handleSubmit(e) {
     e.preventDefault()
 

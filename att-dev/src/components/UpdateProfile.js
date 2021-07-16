@@ -7,10 +7,12 @@ export default function UpdateProfile() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const { currentUser, updatePassword, updateEmail } = useAuth()
+ 
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-
+ 
+   const { currentUser, updatePassword, updateEmail } = useAuth()
+  
   function handleSubmit(e) {
     e.preventDefault()
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {

@@ -56,7 +56,10 @@ const StyledNavigation = styled.div`
 `
 
 export default function Header() {
+
+  
   const { currentUser } = useAuth()
+
 
   return (
     <Container
@@ -86,3 +89,4 @@ export default function Header() {
     </Container>
   )
 }
+

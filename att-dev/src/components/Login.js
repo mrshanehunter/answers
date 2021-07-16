@@ -4,9 +4,12 @@ import { useAuth } from "../contexts/AuthContext"
 import { Link, navigate } from "gatsby"
 
 export default function Login() {
-  const emailRef = useRef()
+ 
+    const { login } = useAuth()
+  
+    const emailRef = useRef()
   const passwordRef = useRef()
-  const { login } = useAuth()
+  
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
@@ -56,3 +59,4 @@ export default function Login() {
     </>
   )
 }
+
