@@ -98,8 +98,8 @@ export default function AskAnswer({ ...props }) {
       </Card>
 
       <Card className="mt-3">
-        <Reveal delay={12000}>
-          <Fade delay={14000} duration={5000}>
+        <Reveal delay={10000}>
+          <Fade delay={12000} duration={5000}>
             <Card.Body className="w-100">
               {(currentUser.balance === 0) 
               ?  <AniLink
