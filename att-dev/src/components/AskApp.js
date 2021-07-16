@@ -29,7 +29,7 @@ export default function AskApp() {
       return <AskReject />
     } else {
     await askUpdate(currentUser)
-      setCount(count - numValue)
+      setCount(count - numValue);
       setLoading(!loading)
       navigate("/app/ask-answer")
       return <AskAnswer />
@@ -43,7 +43,7 @@ export default function AskApp() {
   return (
     <>
      
-       <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `rgba(251, 201, 38, 0.5)`, fontSize: `1.8rem`}}>{count} questions remaining</p> </Container>
+       {/* <Container className="w-100 mb-3 d-flex justify-content-center"><p className="text-center" style={{color: `rgba(251, 201, 38, 0.5)`, fontSize: `1.8rem`}}>{count} questions remaining</p> </Container> */}
       
       
       
