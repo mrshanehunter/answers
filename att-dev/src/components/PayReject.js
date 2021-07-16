@@ -3,7 +3,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 
-export default function PayReject() {
+export default function PayReject({ ...props }) {
   return (
     <>
       <Card>

@@ -11,7 +11,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { db } from "../firebase" 
 
 
-export default function AskAnswer(props) {
+export default function AskAnswer({ ...props }) {
   const { cards } = useStaticQuery(graphql`
     query {
       cards: allSanityTarot {

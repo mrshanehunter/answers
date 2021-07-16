@@ -15,7 +15,7 @@ import AskApp from "../components/AskApp"
 import AskAnswer from "../components/AskAnswer"
 import AskReject from "../components/AskReject"
 
-export default function Application(props) {
+export default function Application({ ...props }) {
   
    
  
@@ -33,17 +33,17 @@ export default function Application(props) {
       >
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Router>
-            <PrivateRoute path="/app/profile/" component={Profile} />
+            <PrivateRoute path="/app/profile/" component={Profile} props={props} />
             <PrivateRoute
               path="/app/update-profile"
-              component={UpdateProfile}
+              component={UpdateProfile} props={props}
             />
             <PrivateRoute
               path="/app/first-checkout"
               component={FirstCheckout}
-            />
-            <PrivateRoute path="/app/pay-success" component={PaySuccess} />
-            <PrivateRoute path="/app/pay-reject" component={PayReject} />
+            props={props}/>
+            <PrivateRoute path="/app/pay-success" component={PaySuccess} props={props}/>
+            <PrivateRoute path="/app/pay-reject" component={PayReject} props={props}/>
             <PrivateRoute path="/app/ask-app" component={AskApp} props={props} />
             <PrivateRoute path="/app/ask-answer" component={AskAnswer} props={props} />
             <PrivateRoute path="/app/ask-balance" component={AskReject} props={props} />

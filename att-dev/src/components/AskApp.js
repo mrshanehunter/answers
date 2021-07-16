@@ -10,7 +10,7 @@ import { askUpdate } from "../firebase"
 import AskReject from "./AskReject"
 import AskAnswer from "./AskAnswer"
 
-export default function AskApp() {
+export default function AskApp({ ...props }) {
   const { currentUser } = useAuth()
   const numValue = process.env.GATSBY_FIREBASE_INCREMENT
   const [count, setCount] = useState(currentUser.balance)

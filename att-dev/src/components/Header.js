@@ -55,7 +55,7 @@ const StyledNavigation = styled.div`
   }
 `
 
-export default function Header() {
+export default function Header({ ...props }) {
 
   
   const { currentUser } = useAuth()

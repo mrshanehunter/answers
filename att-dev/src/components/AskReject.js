@@ -3,7 +3,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { Card, Button } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 
-export default function AskReject() {
+export default function AskReject({ ...props }) {
   const { currentUser } = useAuth()
 
   return (

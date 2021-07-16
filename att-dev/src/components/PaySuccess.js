@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap"
 import PackContext from "../contexts/PackContext"
 import { useAuth } from "../contexts/AuthContext"
 
-export default function PaySuccess() {
+export default function PaySuccess({ ...props }) {
   const { handleUpdate, finishUpdate } = useAuth()
   useContext(PackContext)
   const [loading, setLoading] = useState(false)
