@@ -81,7 +81,7 @@ export default function UpdateProfile({ ...props }) {
         </Card.Body>
       </Card>
       <Card className="w-100 text-center mt-2 p-3">
-        <Link className="btn" to="/profile">Cancel</Link>
+        <Link className="w-100 btn" to="/profile">Cancel</Link>
       </Card>
     </>
   )

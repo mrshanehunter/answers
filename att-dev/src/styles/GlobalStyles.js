@@ -112,7 +112,6 @@ img {
 }
 
 .btn {
-  width: 75%;
   margin: 0 auto;
   border-radius: 1rem;
   border: thin solid var(--gold);
