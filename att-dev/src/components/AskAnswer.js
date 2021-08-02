@@ -64,7 +64,7 @@ export default function AskAnswer({ ...props }) {
       <>
       <Card>
         <Reveal>
-          <Card.Body className="d-flex-column text-center">
+          <Card.Body className="d-flex-column text-center justify-content-center align-items-center">
             <Fade delay={2000}>
               <Zoom delay={2000} duration={6500}>
                 <h5>{card.card_name}</h5>
@@ -73,13 +73,14 @@ export default function AskAnswer({ ...props }) {
             <Fade delay={2000}>
               <Zoom delay={2000} duration={6500}>
                 <Img
+                  className=" p-0"
                   fluid={card.image.asset.fluid}
                   style={{
-                    width: `265px`,
+                    width: `250px`,
                     height: `480px`,
                     margin: `0 auto 1rem`,
-                    padding: `0px`,
                     boxShadow: `0 0 0.75rem rgba(0,0,0,0.5)`,
+                    border: `0.15rem groove var(--gold)` 
                   }}
                   alt={card.card_name}
                 />
