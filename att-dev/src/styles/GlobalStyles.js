@@ -197,11 +197,11 @@ img {
 }
 
 .t-p {
-  font-size: 0.9rem;
-  margin: 0.25rem;
+  font-size: 0.8rem;
+  margin: 0.35rem;
   padding: 0.35rem;
   ol {
-    margin: 0.25rem;
+    margin: 0.35rem;
     padding: 0.5rem;
   }
   li {
