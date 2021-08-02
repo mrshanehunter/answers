@@ -43,9 +43,9 @@ module.exports = {
     {
       resolve: `gatsby-source-sanity`,
       options: {
-        projectId: `fauyll4n`,
-        dataset: `production`,
-        watchMode: false,
+        projectId: process.env.SANITY_ID,
+        dataset: process.env.SANITY_DATASET,
+        watchMode: true,
         token: process.env.SANITY_TOKEN,
       },
     },

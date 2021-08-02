@@ -1,6 +1,39 @@
 import React from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
 import FAQComp from "../components/FAQComp"
 
-const FAQPage = ({ ...props }) => <FAQComp props={props} />
+const StyledContainer = styled.div` 
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+`;
 
-export default FAQPage
+
+export default function FAQPage({ data }) {
+ 
+const faqs = data.answers.nodes
+
+  return (
+    <>
+   
+    <StyledContainer>
+    <FAQComp faqs={faqs}/>
+    </StyledContainer>
+    </>
+  )
+}
+
+export const query = graphql` 
+  query answersFaqsQuery {
+    answers: allSanityAnswersFaqs(sort: {fields: event_key}) {
+      nodes {
+        id
+        question
+        answer
+        event_key
+      }
+    }
+  }
+`;
