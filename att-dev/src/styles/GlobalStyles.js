@@ -183,6 +183,10 @@ img {
   }
 }
 
+.terms-privacy {
+  overflow: auto;
+}
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(359deg); }
