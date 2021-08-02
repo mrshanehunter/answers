@@ -66,6 +66,13 @@ export default function Profile({ ...props }) {
       </Card>
 
       <TokenPurchase page={props.path} welcome={false} />
+      <Card className="w-100 mb-4 p-3">
+        <Button className="w-100 log btn extLink"  >
+          <a href="https://readings.askthetarot.com.au/readings/" rel="noreferrer" target="_blank">
+         Personalised Readings
+         </a>
+        </Button>
+      </Card>
       <Card className="w-100 mb-1 p-3">
         <Button className="w-100 log btn" variant="link" onClick={() => handleLogout()}>
           Log Out

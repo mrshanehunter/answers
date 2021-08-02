@@ -124,6 +124,18 @@ img {
   }
 }
 
+.extLink {
+  a {
+  width: 100%;
+  font-size: 1rem;
+  color: var(--gold);
+  &:hover {
+    text-decoration: none;
+    color: var(--white);
+  }
+}
+}
+
 
 .log {
   margin: 0 auto;
