@@ -183,8 +183,45 @@ img {
   }
 }
 
+.tph {
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
 .terms-privacy {
   overflow: auto;
+  .card-title {
+    font-size: 1rem;
+  }
+}
+
+.t-p {
+  font-size: 0.9rem;
+  margin: 0.25rem;
+  padding: 0.35rem;
+  ol {
+    margin: 0.25rem;
+    padding: 0.5rem;
+  }
+  li {
+    margin: 0.35rem;
+    padding: 0.5rem;
+  }
+  @media (min-width: 576px) {
+    font-size: 1.1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    ol {
+      margin: 0.75rem;
+      padding-left: 0.75rem;
+    }
+    li {
+      margin: 0.5rem;
+      padding-left: 0.5rem;
+     
+    }
+  }
 }
 
 @keyframes spin {

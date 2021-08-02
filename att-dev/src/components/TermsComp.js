@@ -4,11 +4,11 @@ import Card from "react-bootstrap/Card"
 function TCDetail({ term }) {
   return (
     <Card className="w-100" style={{maxWidth: `80rem`, maxHeight: `90vh`}}>
-      <Card.Header className="m-3 p-3 text-center" style={{textShadow: `0.25rem 0.25rem #412456`}}>
+      <Card.Header className="m-3 p-3 text-center tph" style={{textShadow: `0.25rem 0.25rem #412456`}}>
      <h3>  {term.name}</h3>
       </Card.Header>
-      <Card.Body className="terms-privacy">
-        <Card.Text className="mr-4">    
+      <Card.Body className="terms-privacy t-p">
+           
         <ol>
           <li>
             <strong>
@@ -130,7 +130,7 @@ function TCDetail({ term }) {
             {term.para17}
           </li>
         </ol>
-        </Card.Text>
+      
       </Card.Body>
     </Card>
   )
