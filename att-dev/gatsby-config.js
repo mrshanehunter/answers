@@ -2,10 +2,10 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://pensive-hawking-3b7078.netlify.app`,
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    siteUrl: `https://answers.askthetarot.com.au`,
+    title: `Ask The Tarot - Answers`,
+    description: `Your 24/7 tarot reader for quick answers to simple yes or no questions.`,
+    author: `att`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

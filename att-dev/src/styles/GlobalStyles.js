@@ -111,6 +111,8 @@ img {
   color: var(--gold);
 }
 
+
+
 .btn {
   margin: 0 auto;
   border-radius: 1rem;
