@@ -187,6 +187,10 @@ img {
   font-size: 1.2rem;
 }
 
+.thxbtn {
+  margin-left: 25%;
+}
+
 .tph {
   h3 {
     font-size: 1.2rem;

@@ -22,7 +22,7 @@ export default function ThanksPage() {
           </Card.Body>
 
           <Card.Footer className="m-0 p-0">
-            <Button className="w-50 mx-auto">
+            <Button className="w-50 thxbtn">
               <Link to="/profile">Return to the App</Link>
             </Button>
           </Card.Footer>
