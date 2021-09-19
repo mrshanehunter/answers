@@ -37,7 +37,7 @@ export default function ContactForm() {
     <>
     
         <form
-          name="contact"
+          name="answers_contact"
           method="POST"
           action="/thanks/"          
           data-netlify="true"
@@ -45,7 +45,7 @@ export default function ContactForm() {
           className="cf"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-name" value="answers_contact" />
             <p hidden> 
             <label>
             <input  type="hidden" name="bot-field" onChange={handleChange} />
