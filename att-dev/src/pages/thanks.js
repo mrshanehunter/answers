@@ -13,7 +13,7 @@ export default function ThanksPage() {
           <Card.Header className="m-3 p-3 text-center" style={{textShadow: `0.25rem 0.25rem #412456`}}>
             <h3>Form Submitted Successfully</h3>
           </Card.Header>
-          <Card.Body className="m-3">
+          <Card.Body className="m-3 text-center">
             <p>Thanks for taking the time to write to Ask The Tarot Yes or No</p>
             <br />
             <p>Someone will respond to your query within the next 48 hours</p>
@@ -22,7 +22,7 @@ export default function ThanksPage() {
           </Card.Body>
 
           <Card.Footer className="m-0 p-0">
-            <Button className="w-100">
+            <Button className="w-50 mx-auto">
               <Link to="/profile">Return to the App</Link>
             </Button>
           </Card.Footer>
