@@ -46,7 +46,7 @@ export default function ContactForm() {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="answerscontact" />
-            <p hidden> 
+            <p> 
             <label>
             <input  type="hidden" name="bot-field" onChange={handleChange} />
        </label>
