@@ -31,7 +31,7 @@ export default function usePacks({ tokens, data }) {
 
     const orderItem = [{ price: `${itemPrice}`, quantity: 1 }]
     
-    fetch("/.netlify/functions/orderCreate", {
+    fetch("../.netlify/functions/orderCreate", {
       method: "POST",
       body: JSON.stringify(orderItem),
     })
