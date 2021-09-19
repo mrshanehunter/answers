@@ -21,13 +21,7 @@ const StyledLogo = styled.div`
   margin-bottom: 0.5rem;
   padding-left: 0;
   margin-left: 0;
-  &:hover {
-    animation-name: spin;
-    animation-duration: 50ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    border-radius: 50%;
-  }
+  
 `
 
 const StyledNavigation = styled.div`

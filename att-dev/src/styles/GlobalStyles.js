@@ -176,13 +176,15 @@ img {
 .hiw-Card-Body {
   width: 100%;
   @media (min-width: 768px) {
-    /* width: 50%; */
     margin: 0 auto;
   }
   @media (min-width: 1024px) {
-    /* width: 25%; */
     margin: 0 auto;
   }
+}
+
+.faqh3 {
+  font-size: 1.2rem;
 }
 
 .tph {
@@ -195,6 +197,66 @@ img {
   overflow: auto;
   .card-title {
     font-size: 1rem;
+  }
+}
+
+.cf {
+  
+  h3 {
+    text-align: center;
+  }
+  h4 {
+    text-align: center;
+  }
+  label {
+    color: var(--gold);
+    width: 100%;
+    font-style: bold;
+    font-size: 1.5rem;
+    margin-left: 25%;
+    @media (max-width: 546px) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  input, textarea {
+    background: var(--shade);
+    border: 0.05rem solid var(--gold);
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    width: 50%;
+    :focus {
+      background: var(--black);
+      color: var(--white);
+      font-size: 1.5rem;
+    }
+    @media (max-width: 546px) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  button {
+    border-style: none;
+    background: var(--purple);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    width: 50%;
+    margin-left: 25%;
+    :hover {
+      color: var(--lpurple);
+      background: var(--purple);
+    }
+    @media (max-width: 546px) {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }
 
@@ -226,10 +288,7 @@ img {
   }
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(359deg); }
-}
+
 
 `;
 
