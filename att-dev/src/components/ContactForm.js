@@ -25,7 +25,7 @@ export default function ContactForm() {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "answerscontact",
+        "form-name": form.getAttribute("name"),
         ...state
       }),
     })
