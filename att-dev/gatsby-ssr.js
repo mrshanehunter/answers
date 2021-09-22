@@ -1,4 +1,4 @@
-/*import React from "react"
+import React from "react"
 import Layout from "./src/components/Layout"
 import { AuthProvider } from "./src/contexts/AuthContext"
 import { PackProvider } from "./src/contexts/PackContext"
@@ -16,6 +16,6 @@ export const wrapRootElement = ({ element }) => {
     </AuthProvider>
   )
 }
-*/
+
 
 
