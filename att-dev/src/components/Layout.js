@@ -5,6 +5,7 @@ import Header from "./Header"
 import { Container} from "react-bootstrap"
 import GlobalStyles from "../styles/GlobalStyles"
 import Typography from "../styles/Typography"
+import StyledBackgroundSection from "./BackgroundSection"
 
 
 export default function Layout({ children }) {
@@ -12,15 +13,22 @@ export default function Layout({ children }) {
     <>
     <GlobalStyles />
     <Typography />
+  
+  
+        <StyledBackgroundSection>
     <Container className="fullScreen">
-    <Container className="borderStyle"> 
+        <Container className="borderStyle"> 
      <Header />
     <Container className="contentStyle">
       {children}
       </Container>
       <Footer />
       </Container>
-</Container>
+ </Container>
+     
+      </StyledBackgroundSection>
+
+
     </>
   )
 }

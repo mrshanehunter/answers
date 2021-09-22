@@ -10,7 +10,7 @@ function Questions({ faq }) {
         eventKey={faq.event_key}
         style={{ cursor: `pointer` }}
       >
-        <h3 className="m-3 p-3 faqh3" style={{textShadow: `0.25rem 0.25rem #412456`}}>{faq.question}</h3>
+        <h3 className="m-1 p-2 faqh3" style={{textShadow: `0.25rem 0.25rem #412456`}}>{faq.question}</h3>
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={faq.event_key}>
         <Card.Body className="m-3" style={{color: `var(--gold)`}}>{faq.answer}</Card.Body>

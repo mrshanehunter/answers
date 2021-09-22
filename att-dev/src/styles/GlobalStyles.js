@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { createGlobalStyle } from "styled-components"
-import ANSWERS_BG from "../images/ANSWERS_BG.jpg"
+import BG_BH_DSK from "../images/BG_BH_DSK.jpg"
 
 const GlobalStyles = createGlobalStyle` 
 
@@ -17,10 +17,10 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   background-color: #412456;
-  background-image: url(${ANSWERS_BG});
+  /* background-image: url(${BG_BH_DSK.jpg});
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
 
 body {
