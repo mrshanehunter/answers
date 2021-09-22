@@ -56,8 +56,9 @@ export default function Header({ ...props }) {
 
 
   return (
+   
     <Container
-      className="d-flex pl-2 pr-2"
+      className="d-flex w-100 m-1"
       style={{
         background: `rgba(65, 36, 86, 0.35)`,
         borderRadius: `1rem`,
@@ -81,6 +82,7 @@ export default function Header({ ...props }) {
         )}
       </StyledNavigation>
     </Container>
+   
   )
 }
 

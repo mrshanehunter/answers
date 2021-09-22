@@ -72,8 +72,13 @@ img {
 
 .borderStyle {
   background: var(--shaded);
-  
+  display: flex;
+  flex-direction: column;
   width: 95%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   margin: 1rem auto;
   border-radius: 1rem;
   padding: 0;
@@ -83,6 +88,7 @@ img {
 .contentStyle {
   background: var(--shaded);
   width: 90%;
+  flex: 1;
   margin: 1rem auto;
   border-radius: 1rem;
   padding-top: 0.75rem;
