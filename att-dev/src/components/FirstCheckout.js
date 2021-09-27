@@ -16,7 +16,9 @@ export default function FirstCheckout({ ...props }) {
             </p>
           <p className="text-center">10 becomes 20</p>
           <p className="text-center">20 becomes 40</p>
-          
+         <Card.Text className="tandccheck">
+         <p>By Aquiring Tokens you confirm your acceptance of Ask The Tarot's <a href="https://answers.askthetarot.com.au/terms" target="_blank" rel="noreferrer">terms & conditions</a></p>
+       </Card.Text> 
         </Card.Body>
       </Card>
       <TokenPurchase page={props.path} welcome={true} />

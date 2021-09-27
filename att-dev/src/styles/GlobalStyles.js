@@ -310,6 +310,20 @@ img {
   }
 }
 
+.addressCard {
+  border: 0.05rem solid var(--gold);
+}
+
+.address p {
+  font-size: 1rem;
+  color: var(--gold);
+  text-align: center;
+}
+
+.card-text {
+  margin-bottom: 0.25rem;
+}
+
 
 `;
 
