@@ -195,6 +195,8 @@ img {
 
 .thxbtn {
   margin-left: 25%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .tph {
