@@ -1,6 +1,13 @@
 import React from "react"
 import ContactForm from "../components/ContactForm"
+import SEO from "../components/seo"
 
-const AskContactPage = ({...props}) => <ContactForm props={props}/>
-
-export default AskContactPage
+export default function AskContactPage ({...props}) { 
+  
+ return ( 
+   <>
+   <SEO title="Contact" />
+  <ContactForm  props={props}/>
+  </>
+)
+}

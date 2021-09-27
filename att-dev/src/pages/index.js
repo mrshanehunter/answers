@@ -3,9 +3,11 @@ import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Teaser from "../components/Teaser"
+import SEO from "../components/seo"
 
 const IndexPage = ({...props}) => (
   <>
+  <SEO title="Welcome" />
    <Teaser />
   <Card className="mt-4" style={{ background: `transparent`, boxShadow: `none`}}>
     <Card.Body className="hiw-Card-Body">

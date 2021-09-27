@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 import Footer from "./Footer"
 import Header from "./Header"
 import { Container} from "react-bootstrap"
@@ -9,6 +10,16 @@ import StyledBackgroundSection from "./BackgroundSection"
 
 
 export default function Layout({ children }) {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <>
     <GlobalStyles />
@@ -18,7 +29,7 @@ export default function Layout({ children }) {
         <StyledBackgroundSection>
     <Container className="fullScreen">
         <Container className="borderStyle"> 
-     <Header />
+     <Header siteTitle={data.site.siteMetadata?.title || `Title`}  />
     <Container className="contentStyle">
       {children}
       </Container>

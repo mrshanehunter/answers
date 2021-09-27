@@ -1,6 +1,15 @@
 import React from "react"
 import AskAnswer from "../components/AskAnswer"
+import SEO from "../components/seo"
 
-const AskAnswerPage = ({...props}) => <AskAnswer  props={props}/>
 
-export default AskAnswerPage
+export default function AskAnswerPage ({...props}) {
+
+  return (
+<>
+  <SEO title="Answer" />
+ <AskAnswer  props={props}/>
+</>
+
+  )
+}

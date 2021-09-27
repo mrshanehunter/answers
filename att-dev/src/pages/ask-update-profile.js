@@ -1,6 +1,14 @@
 import React from "react"
 import UpdateProfile from "../components/UpdateProfile"
+import SEO from "../components/seo"
 
-const AskUpdateProfilePage = ({...props}) => <UpdateProfile props={props}/>
+export default function AskUpdateProfilePage ({...props}) { 
+  
+ return ( 
+   <>
+   <SEO title="Update Profile" />
+  <UpdateProfile  props={props}/>
+  </>
+)
+}
 
-export default AskUpdateProfilePage

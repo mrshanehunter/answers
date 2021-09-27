@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import FAQComp from "../components/FAQComp"
+import SEO from "../components/seo"
 
 const StyledContainer = styled.div` 
   width: 90%;
@@ -17,7 +18,7 @@ const faqs = data.answers.nodes
 
   return (
     <>
-   
+   <SEO title="FAQ" />
     <StyledContainer>
     <FAQComp faqs={faqs}/>
     </StyledContainer>

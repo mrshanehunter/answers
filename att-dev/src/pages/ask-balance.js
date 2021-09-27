@@ -1,6 +1,13 @@
 import React from "react"
 import AskReject from "../components/AskReject"
+import SEO from "../components/seo"
 
-const AskBalancePage = ({...props}) => <AskReject  props={props}/>
-
-export default AskBalancePage
+export default function AskBalancePage ({...props}) { 
+  
+ return ( 
+   <>
+   <SEO title="Balance" />
+  <AskReject  props={props}/>
+  </>
+)
+}

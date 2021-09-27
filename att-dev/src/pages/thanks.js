@@ -3,11 +3,12 @@ import { Link } from "gatsby"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import Container from "react-bootstrap/Container"
+import SEO from "../components/seo"
 
 export default function ThanksPage() {
   return (
     <>
-     
+     <SEO title="Form Submitted" />
       <Container className="d-flex-column justify-content-center align-items-center">
         <Card className="w-100" style={{ maxWidth: `50rem`, margin: `3rem auto` }}>
           <Card.Header className="m-3 p-3 text-center" style={{textShadow: `0.25rem 0.25rem #412456`}}>
