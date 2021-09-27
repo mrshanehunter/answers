@@ -298,6 +298,15 @@ img {
   }
 }
 
+.tandccheck p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: var(--gold);
+  a {
+    color: var(--gold);
+    text-decoration: underline;
+  }
+}
 
 
 `;

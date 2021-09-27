@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Button, Card } from "react-bootstrap"
+import { Button, Card, CarouselItem } from "react-bootstrap"
 import usePacks from "../services/usePacks"
 
 export default function TokenPurchase({ ...props }) {
@@ -55,6 +55,9 @@ export default function TokenPurchase({ ...props }) {
             </Button>
           </div>
         ))}
+       <Card.Text className="tandccheck">
+         <p>By Aquiring Tokens you confirm your acceptance of Ask The Tarot's <a href="https://answers.askthetarot.com.au/terms" target="_blank">terms & conditions</a></p>
+       </Card.Text>
       </Card.Body>
     </Card>
   )
