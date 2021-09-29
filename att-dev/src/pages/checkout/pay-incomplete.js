@@ -1,14 +1,12 @@
 import React from "react"
 import PayReject from "../../components/PayReject"
-import SEO from "../../components/seo"
+import Seo from "../../components/Seo"
 
-export default function PayIncompletePage ({...props}) { 
-  
- return ( 
-   <>
-   <SEO title="Incomplete Payment" />
-  <PayReject  props={props}/>
-  </>
-)
+export default function PayIncompletePage({ ...props }) {
+  return (
+    <>
+      <Seo title="Incomplete Payment" />
+      <PayReject props={props} />
+    </>
+  )
 }
-

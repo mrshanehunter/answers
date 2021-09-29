@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 
 import PrivacyComp from "../components/PrivacyComp"
 
@@ -16,7 +16,7 @@ export default function PrivacyPage({ data }) {
   const privacys = data.privacys.nodes
   return (
     <>
-      <SEO title="Privacy" />
+      <Seo title="Privacy" />
       <StyledContainer>
         <PrivacyComp privacys={privacys} />
       </StyledContainer>

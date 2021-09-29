@@ -1,13 +1,12 @@
 import React from "react"
 import AskReject from "../components/AskReject"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 
-export default function AskBalancePage ({...props}) { 
-  
- return ( 
-   <>
-   <SEO title="Balance" />
-  <AskReject  props={props}/>
-  </>
-)
+export default function AskBalancePage({ ...props }) {
+  return (
+    <>
+      <Seo title="Balance" />
+      <AskReject props={props} />
+    </>
+  )
 }

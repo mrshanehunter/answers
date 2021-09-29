@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button"
 import Reveal from "react-reveal/Reveal"
 import ReactCardFlip from "react-card-flip"
 import Image from "./Image"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Teaser() {
   const { cards } = useStaticQuery(graphql`
@@ -18,9 +18,11 @@ export default function Teaser() {
           response
           image {
             asset {
-              fluid(maxWidth: 200) {
-                ...GatsbySanityImageFluid
-              }
+              gatsbyImageData(
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+                layout: CONSTRAINED
+              )
             }
           }
         }
@@ -40,8 +42,16 @@ export default function Teaser() {
   return (
     <>
       <Reveal delay={2000} duration={2000}>
-        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" flipSpeedFrontToBack={0.99} flipSpeedBackToFront={0.1}>
-          <Card className="mx-auto" style={{ height: `570px`, maxWidth: `400px`}}>
+        <ReactCardFlip
+          isFlipped={isFlipped}
+          flipDirection="horizontal"
+          flipSpeedFrontToBack={0.99}
+          flipSpeedBackToFront={0.1}
+        >
+          <Card
+            className="mx-auto"
+            style={{ height: `570px`, maxWidth: `400px` }}
+          >
             <Card.Body className="mx-auto">
               <Image style={{ paddingTop: `20px` }} />
             </Card.Body>
@@ -57,13 +67,15 @@ export default function Teaser() {
             </div>
           </Card>
 
-          <Card className="mx-auto" style={{ height: `570px`, maxWidth: `400px` }}>
-         
+          <Card
+            className="mx-auto"
+            style={{ height: `570px`, maxWidth: `400px` }}
+          >
             <Card.Body className="d-flex-column text-center">
               <h5>{card.card_name}</h5>
 
-              <Img
-                fluid={card.image.asset.fluid}
+              <GatsbyImage
+                image={card.image.asset.gatsbyImageData}
                 style={{
                   width: `200px`,
                   height: `315px`,
@@ -78,14 +90,16 @@ export default function Teaser() {
                 <p>{card.response}</p>
               </div>
             </Card.Body>
-           
+
             <div className="d-flex justify-content-center p-3">
-            <Button 
-            type="button"
-            className="teaser-Card-Button"
-            onClick={handleClick}>Another Question?</Button>
+              <Button
+                type="button"
+                className="teaser-Card-Button"
+                onClick={handleClick}
+              >
+                Another Question?
+              </Button>
             </div>
-           
           </Card>
         </ReactCardFlip>
       </Reveal>

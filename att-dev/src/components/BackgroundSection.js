@@ -1,44 +1,50 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
+import { getImage } from "gatsby-plugin-image"
+import { BgImage } from "gbimage-bridge"
 
-const BackgroundSection = ({ className, children }) => {
-  const data = useStaticQuery(
+const BackgroundSection = ({ children }) => {
+  const { backgroundImage } = useStaticQuery(
     graphql`
       query {
-        desktop: file(relativePath: { eq: "BG_SS_DSK.jpg"}) {
+        backgroundImage: file(relativePath: { eq: "BG_SS_DSK.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(
+              width: 1920
+              height: 1080
+              formats: [AUTO, WEBP, AVIF]
+              placeholder: BLURRED
+              layout: CONSTRAINED
+              quality: 50
+              webpOptions: { quality: 80 }
+            )
           }
         }
       }
-    `  
+    `
   )
 
-  const imageData = data.desktop.childImageSharp.fluid
+  const pluginImage = getImage(backgroundImage)
 
   return (
-    <BackgroundImage
-      Tag="section"
-      className={className}
-      fluid={imageData}
-     
-      >
-       {children}
-      </BackgroundImage>
+    <BgImage image={pluginImage} className="bg">
+      {children}
+    </BgImage>
   )
 }
+BackgroundSection.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
-const StyledBackgroundSection = styled(BackgroundSection)`
-  width: 100%;
-  min-height: 100vh;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-`
+// const StyledBackgroundSection = styled(BackgroundSection)`
+//   width: 100%;
+//   min-height: 100vh;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-attachment: fixed;
+// `
 
-export default StyledBackgroundSection
+export default BackgroundSection

@@ -10,12 +10,11 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          process.env.GA_GTAG,
-        ],
+        trackingIds: [process.env.GA_GTAG],
         pluginConfig: {
           head: true,
         },

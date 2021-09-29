@@ -1,6 +1,6 @@
-import firebase from "firebase/app"
-import "firebase/auth"
-import "firebase/firestore"
+import firebase from "firebase/compat/app"
+import "firebase/compat/auth"
+import "firebase/compat/firestore"
 
 const app = firebase.initializeApp({
   apiKey: process.env.GATSBY_FIREBASE_APIKEY,
@@ -14,8 +14,7 @@ const app = firebase.initializeApp({
 export const auth = app.auth()
 export const db = app.firestore()
 export default app
-export const integer = process.env.GATSBY_FIREBASE_INCREMENT * -1;
-
+export const integer = process.env.GATSBY_FIREBASE_INCREMENT * -1
 
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return

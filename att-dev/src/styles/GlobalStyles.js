@@ -120,7 +120,7 @@ img {
 
 
 .btn {
-  margin: 0 auto;
+  margin: 2rem auto 0;
   border-radius: 1rem;
   border: thin solid var(--gold);
   background: var(--shaded);
@@ -151,6 +151,9 @@ img {
   font-size: 1.2rem;
   &:hover {
     color: var(--yellow);
+  }
+  a {
+    text-decoration: none;
   }
 }
 
@@ -325,6 +328,6 @@ img {
 }
 
 
-`;
+`
 
 export default GlobalStyles

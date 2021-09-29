@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components"
 
 const Typography = createGlobalStyle`
 
@@ -109,6 +109,9 @@ p {
   font-size: 1.4rem;
   line-height: 1.1;
 }
-`;
+a {
+  text-decoration: none;
+}
+`
 
-export default Typography;
+export default Typography

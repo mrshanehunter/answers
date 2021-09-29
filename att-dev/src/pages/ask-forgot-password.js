@@ -1,13 +1,12 @@
 import React from "react"
 import ForgotPassword from "../components/ForgotPassword"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 
-export default function AskForgotPasswordPage ({...props}) { 
-  
- return ( 
-   <>
-   <SEO title="Forgot Password" />
-  <ForgotPassword  props={props}/>
-  </>
-)
+export default function AskForgotPasswordPage({ ...props }) {
+  return (
+    <>
+      <Seo title="Forgot Password" />
+      <ForgotPassword props={props} />
+    </>
+  )
 }

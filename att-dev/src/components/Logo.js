@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -18,19 +18,27 @@ const Logo = () => {
     query {
       placeholderImage: file(relativePath: { eq: "att.png" }) {
         childImageSharp {
-          fixed(width: 75) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(
+            width: 100
+            layout: CONSTRAINED
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }
   `)
 
-  if (!data?.placeholderImage?.childImageSharp?.fixed) {
+  if (!data?.placeholderImage?.childImageSharp?.gatsbyImageData) {
     return <div>Ask The Tarot</div>
   }
 
-  return <Img fixed={data.placeholderImage.childImageSharp.fixed} style={{margin: `0`, padding: `0`}}/>
+  return (
+    <GatsbyImage
+      image={data.placeholderImage.childImageSharp.gatsbyImageData}
+      style={{ margin: `0`, padding: `0` }}
+    />
+  )
 }
 
 export default Logo

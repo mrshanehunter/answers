@@ -1,13 +1,12 @@
 import React from "react"
 import Login from "../components/Login"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 
-export default function AskLoginPage ({...props}) { 
-  
- return ( 
-   <>
-   <SEO title="Login" />
-  <Login  props={props}/>
-  </>
-)
+export default function AskLoginPage({ ...props }) {
+  return (
+    <>
+      <Seo title="Login" />
+      <Login props={props} />
+    </>
+  )
 }

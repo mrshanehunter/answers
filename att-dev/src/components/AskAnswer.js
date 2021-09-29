@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
@@ -8,9 +8,7 @@ import Reveal from "react-reveal/Reveal"
 import Fade from "react-reveal/Fade"
 import Zoom from "react-reveal/Zoom"
 import { useAuth } from "../contexts/AuthContext"
-import { db } from "../firebase" 
-
-
+import { db } from "../firebase"
 
 export default function AskAnswer({ ...props }) {
   const { cards } = useStaticQuery(graphql`
@@ -23,16 +21,18 @@ export default function AskAnswer({ ...props }) {
           response
           image {
             asset {
-              fluid(maxWidth: 200) {
-                ...GatsbySanityImageFluid
-              }
+              gatsbyImageData(
+                placeholder: BLURRED
+                layout: CONSTRAINED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }
       }
     }
   `)
-  
+
   const { currentUser } = useAuth()
   const random = Math.floor(Math.random() * 78)
   const card = cards.nodes[`${random}`]
@@ -44,24 +44,19 @@ export default function AskAnswer({ ...props }) {
       .doc(`${currentUser.uid}`)
       .onSnapshot(doc => {
         const dataUpdate = doc.data()
-        let balance = dataUpdate.balance;
+        let balance = dataUpdate.balance
         if (state.balance > balance) {
-        currentUser.balance = balance
-        setState(state => [{...state, balance: balance}])
+          currentUser.balance = balance
+          setState(state => [{ ...state, balance: balance }])
         }
       })
     return () => {
       unsub()
     }
-   
   })
 
-  
-  
-  
   return (
-   
-      <>
+    <>
       <Card>
         <Reveal>
           <Card.Body className="d-flex-column text-center justify-content-center align-items-center">
@@ -72,15 +67,15 @@ export default function AskAnswer({ ...props }) {
             </Fade>
             <Fade delay={2000}>
               <Zoom delay={2000} duration={6500}>
-                <Img
+                <GatsbyImage
                   className=" p-0"
-                  fluid={card.image.asset.fluid}
+                  image={card.image.asset.gatsbyImageData}
                   style={{
                     width: `250px`,
                     height: `480px`,
                     margin: `0 auto 1rem`,
                     boxShadow: `0 0 0.75rem rgba(0,0,0,0.5)`,
-                    border: `0.15rem groove var(--gold)` 
+                    border: `0.15rem groove var(--gold)`,
                   }}
                   alt={card.card_name}
                 />
@@ -92,7 +87,14 @@ export default function AskAnswer({ ...props }) {
               </Zoom>
             </Fade>
             <Fade delay={10500} duration={9500}>
-              <p style={{ fontSize: `1.8rem`, textShadow: `1px 1px 1px var(--black)` }}>{card.response}</p>
+              <p
+                style={{
+                  fontSize: `1.8rem`,
+                  textShadow: `1px 1px 1px var(--black)`,
+                }}
+              >
+                {card.response}
+              </p>
             </Fade>
           </Card.Body>
         </Reveal>
@@ -102,39 +104,35 @@ export default function AskAnswer({ ...props }) {
         <Reveal delay={10000}>
           <Fade delay={10000} duration={5000}>
             <Card.Body className="w-100">
-              {(currentUser.balance === 0) 
-              ?  <AniLink
-                 paintDrip
-                 to="/ask-balance"
-                 hex="#412456"
-                 duration={0.25}
-                 className="d-flex w-100 p-0 m-0"
-              >
-                <Button className="w-100 ml-auto mr-auto text-center">
-                  Need More Answers?
-                </Button>
-              </AniLink>
-            :  <AniLink
-                 paintDrip
-                 to="/ask-app"
-                 hex="#412456"
-                 duration={0.25}
-                 className="d-flex w-100 p-0 m-0"
-              >
-                <Button className="w-100 ml-auto mr-auto text-center">
-                  Ask Another Question?
-                </Button>
-              </AniLink> 
-            
-            
-            }
+              {currentUser.balance === 0 ? (
+                <AniLink
+                  paintDrip
+                  to="/ask-balance"
+                  hex="#412456"
+                  duration={0.25}
+                  className="d-flex w-100 p-0 m-0"
+                >
+                  <Button className="w-100 ml-auto mr-auto text-center">
+                    Need More Answers?
+                  </Button>
+                </AniLink>
+              ) : (
+                <AniLink
+                  paintDrip
+                  to="/ask-app"
+                  hex="#412456"
+                  duration={0.25}
+                  className="d-flex w-100 p-0 m-0"
+                >
+                  <Button className="w-100 mt-0 ml-auto mr-auto text-center">
+                    Ask Another Question?
+                  </Button>
+                </AniLink>
+              )}
             </Card.Body>
           </Fade>
         </Reveal>
       </Card>
-
     </>
-         
   )
 }
-
