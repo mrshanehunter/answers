@@ -15,15 +15,15 @@ const IndexPage = ({ ...props }) => (
     >
       <Card.Body className="hiw-Card-Body">
         <AniLink
-          className="w-100"
+          className="w-100 d-flex justify-content-center"
           paintDrip
           to="/faq"
           hex="#412456"
           duration={0.25}
         >
-          <Button type="button" className="w-100 btn">
+          <button type="button" className="hiw-btn">
             How It Works
-          </Button>
+          </button>
         </AniLink>
       </Card.Body>
     </Card>

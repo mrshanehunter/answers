@@ -47,6 +47,9 @@ export default function TeaserBack() {
         {" "}
         <p>{card.response}</p>
       </div>
+      <div>
+        <p>Click "Ask" above to get answers from the entire tarot deck.</p>
+      </div>
     </Fade>
   )
 }

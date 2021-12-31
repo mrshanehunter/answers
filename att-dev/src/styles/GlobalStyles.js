@@ -156,6 +156,10 @@ img {
 
 .hiw-Card-Body {
   width: 100%;
+  a {
+    text-decoration: none;
+  }
+ 
   @media (min-width: 768px) {
     margin: 0 auto;
   }
@@ -358,8 +362,9 @@ img {
   justify-content: center;
 }
 
+
 .teaser-button-container button {
-  width: 50%;
+  width: 15rem;
   margin: 2rem auto 0;
   border-radius: 1rem;
   border: thin solid var(--gold);
@@ -368,11 +373,26 @@ img {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   &:hover {
     background: var(--green);
-    color: var(--lpurple);
+    color: var(--white);
     border: thin solid var(--purple);
   }
-  
+ }
 
+.hiw-btn {
+  width: 15rem;
+  margin: 0 auto;
+  padding: 0.375rem 0.8rem;
+  border-radius: 1rem;
+  border: 0.015rem solid var(--gold);
+  background: var(--shaded);
+  color: var(--gold);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  &:hover {
+    background: var(--green);
+    color: var(--white);
+    border: 0.015rem solid var(--lpurple);
+  }
 }
 
 
