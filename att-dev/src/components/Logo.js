@@ -36,6 +36,7 @@ const Logo = () => {
   return (
     <GatsbyImage
       image={data.placeholderImage.childImageSharp.gatsbyImageData}
+      alt="ATT Logo Image"
       style={{ margin: `0`, padding: `0` }}
     />
   )

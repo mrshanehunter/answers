@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { createGlobalStyle } from "styled-components"
-import BG_BH_DSK from "../images/BG_BH_DSK.jpg"
 
 const GlobalStyles = createGlobalStyle` 
 
@@ -11,16 +10,13 @@ const GlobalStyles = createGlobalStyle`
   --green: #31ab1f;
   --white: #fefefa;
   --black: #070707;
+  --lpurple: #dc68f5;
   --shade: rgba(65, 36, 86, 0.35);
   --shaded: rgba(65, 36, 86, 0.5);
 }
 
 html {
   background-color: #412456;
-  /* background-image: url(${BG_BH_DSK.jpg});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
 }
 
 body {
@@ -157,30 +153,6 @@ img {
   }
 }
 
-.teaser-Card-Body {
-  width: 100%;
-  @media (min-width: 768px) {
-    width: 75%;
-    margin: 0 auto;
-  }
-}
-
-.teaser-Card-Button {
-  width: 100%;
-  @media (min-width: 768px) {
-    margin: 0 auto;
-    width: 75%;
-  }
-}
-
-.teaser-Card-Response {
-  margin: 0 auto;
-  width: 250px;
-  height: 100px;
-  p {
-    font-size: 1.25rem;
-  }
-}
 
 .hiw-Card-Body {
   width: 100%;
@@ -326,6 +298,84 @@ img {
 .card-text {
   margin-bottom: 0.25rem;
 }
+
+.teaser-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.teaser-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.teaser-container div {
+  display: flex;
+  margin-top: .75rem;
+}
+
+.teaser-container div h3 {
+  font-size: 1.2rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+.teaser-container div h4 {
+  font-size: 1.2rem;
+}
+
+.teaser-container div p {
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.teaser-container div .gatsby-image-wrapper {
+  width: 50%;
+  height: auto;
+  justify-items: center;
+  justify-content: center;
+  margin: 0.5rem auto;
+  border: 0.05rem solid var(--gold);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+ 
+}
+
+.teaser-button-container {
+  width: 100%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.teaser-button-container button {
+  width: 50%;
+  margin: 2rem auto 0;
+  border-radius: 1rem;
+  border: thin solid var(--gold);
+  background: var(--shaded);
+  color: var(--gold);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  &:hover {
+    background: var(--green);
+    color: var(--lpurple);
+    border: thin solid var(--purple);
+  }
+  
+
+}
+
+
 
 
 `
