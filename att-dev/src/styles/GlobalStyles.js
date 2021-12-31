@@ -90,17 +90,27 @@ img {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 
 
 .card {
-  max-width: 475px;
+  
+  max-width: 600px;
   background: var(--shade);
   border: none;
   border-radius: 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   margin: 0 auto;
+}
+
+.card-body {
+  min-width: 325px;
 }
 
 .link {
@@ -151,6 +161,11 @@ img {
   a {
     text-decoration: none;
   }
+}
+
+.btn-link {
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 

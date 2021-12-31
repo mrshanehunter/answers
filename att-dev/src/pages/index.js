@@ -1,6 +1,5 @@
 import React from "react"
 import Card from "react-bootstrap/Card"
-import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Teaser from "../components/Teaser"
 import SEO from "../components/SEO"
