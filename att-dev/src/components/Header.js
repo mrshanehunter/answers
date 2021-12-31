@@ -21,7 +21,6 @@ const StyledLogo = styled.div`
   margin-bottom: 0.5rem;
   padding-left: 0;
   margin-left: 0;
-  
 `
 
 const StyledNavigation = styled.div`
@@ -43,20 +42,20 @@ const StyledNavigation = styled.div`
   a {
     color: var(--gold);
     padding-left: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     letter-spacing: 0.15rem;
     text-shadow: 1px 1px 1px var(--black);
+    text-decoration: none;
+    :hover {
+      color: var(--lpurple);
+    }
   }
 `
 
 export default function Header({ ...props }) {
-
-  
   const { currentUser } = useAuth()
 
-
   return (
-   
     <Container
       className="d-flex w-100 m-2"
       style={{
@@ -73,7 +72,7 @@ export default function Header({ ...props }) {
       <StyledNavigation>
         {currentUser ? (
           <AniLink paintDrip to="/profile" hex="#412456" duration={0.25}>
-            Profile
+            {`${currentUser.displayName}`}'s Profile
           </AniLink>
         ) : (
           <AniLink paintDrip to="/ask-login" hex="#412456" duration={0.25}>
@@ -82,7 +81,5 @@ export default function Header({ ...props }) {
         )}
       </StyledNavigation>
     </Container>
- 
   )
 }
-

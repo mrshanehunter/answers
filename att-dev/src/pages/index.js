@@ -10,7 +10,7 @@ const IndexPage = ({ ...props }) => (
     <Seo title="Welcome" />
     <Teaser />
     <Card
-      className="mt-4"
+      className="mt-1"
       style={{ background: `transparent`, boxShadow: `none` }}
     >
       <Card.Body className="hiw-Card-Body">

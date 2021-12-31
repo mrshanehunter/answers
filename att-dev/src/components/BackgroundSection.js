@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
 import { getImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
 
@@ -29,7 +28,7 @@ const BackgroundSection = ({ children }) => {
   const pluginImage = getImage(backgroundImage)
 
   return (
-    <BgImage image={pluginImage} className="bg">
+    <BgImage image={pluginImage} alt="background image" className="bg">
       {children}
     </BgImage>
   )

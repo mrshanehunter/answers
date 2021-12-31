@@ -4,9 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Reveal from "react-reveal/Reveal"
-import Fade from "react-reveal/Fade"
-import Zoom from "react-reveal/Zoom"
+import { Fade, Zoom } from "react-awesome-reveal"
 import { useAuth } from "../contexts/AuthContext"
 import { db } from "../firebase"
 
@@ -58,7 +56,7 @@ export default function AskAnswer({ ...props }) {
   return (
     <>
       <Card>
-        <Reveal>
+        <Fade cascade={true}>
           <Card.Body className="d-flex-column text-center justify-content-center align-items-center">
             <Fade delay={2000}>
               <Zoom delay={2000} duration={6500}>
@@ -97,41 +95,39 @@ export default function AskAnswer({ ...props }) {
               </p>
             </Fade>
           </Card.Body>
-        </Reveal>
+        </Fade>
       </Card>
 
       <Card className="mt-3">
-        <Reveal delay={10000}>
-          <Fade delay={10000} duration={5000}>
-            <Card.Body className="w-100">
-              {currentUser.balance === 0 ? (
-                <AniLink
-                  paintDrip
-                  to="/ask-balance"
-                  hex="#412456"
-                  duration={0.25}
-                  className="d-flex w-100 p-0 m-0"
-                >
-                  <Button className="w-100 ml-auto mr-auto text-center">
-                    Need More Answers?
-                  </Button>
-                </AniLink>
-              ) : (
-                <AniLink
-                  paintDrip
-                  to="/ask-app"
-                  hex="#412456"
-                  duration={0.25}
-                  className="d-flex w-100 p-0 m-0"
-                >
-                  <Button className="w-100 mt-0 ml-auto mr-auto text-center">
-                    Ask Another Question?
-                  </Button>
-                </AniLink>
-              )}
-            </Card.Body>
-          </Fade>
-        </Reveal>
+        <Fade delay={7500} duration={5000}>
+          <Card.Body className="w-100">
+            {currentUser.balance === 0 ? (
+              <AniLink
+                paintDrip
+                to="/ask-balance"
+                hex="#412456"
+                duration={0.25}
+                className="d-flex w-100 p-0 m-0"
+              >
+                <Button className="w-100 ml-auto mr-auto text-center">
+                  Need More Answers?
+                </Button>
+              </AniLink>
+            ) : (
+              <AniLink
+                paintDrip
+                to="/ask-app"
+                hex="#412456"
+                duration={0.25}
+                className="d-flex w-100 p-0 m-0"
+              >
+                <Button className="w-100 mt-0 ml-auto mr-auto text-center">
+                  Ask Another Question?
+                </Button>
+              </AniLink>
+            )}
+          </Card.Body>
+        </Fade>
       </Card>
     </>
   )

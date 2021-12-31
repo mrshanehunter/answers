@@ -1,12 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Button, Card, CarouselItem } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 import usePacks from "../services/usePacks"
 
 export default function TokenPurchase({ ...props }) {
   const { tokenpacks } = useStaticQuery(graphql`
     query {
-      tokenpacks: allSanityTokenpacks(sort: {fields: pack_token_qty}){
+      tokenpacks: allSanityTokenpacks(sort: { fields: pack_token_qty }) {
         nodes {
           pack_name
           pack_price_display
@@ -48,16 +48,24 @@ export default function TokenPurchase({ ...props }) {
               onClick={e => {
                 let data = e.currentTarget.name
                 addToOrder(data)
-               
               }}
             >
               {pack.pack_name} for ${pack.pack_price_display / 100}
             </Button>
           </div>
         ))}
-       <Card.Text className="tandccheck">
-         <p>By Aquiring Tokens you confirm your acceptance of Ask The Tarot's <a href="https://answers.askthetarot.com.au/terms" target="_blank" rel="noreferrer">terms & conditions</a></p>
-       </Card.Text>
+        <div className="tandccheck">
+          <p>
+            By Aquiring Tokens you confirm your acceptance of Ask The Tarot's{" "}
+            <a
+              href="https://answers.askthetarot.com.au/terms"
+              target="_blank"
+              rel="noreferrer"
+            >
+              terms & conditions
+            </a>
+          </p>
+        </div>
       </Card.Body>
     </Card>
   )
