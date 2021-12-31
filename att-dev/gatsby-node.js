@@ -1,12 +1,10 @@
-
-
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
           {
-            test: "/firebase/app",
+            test: "/firebase/compat/app",
             use: loaders.null(),
           },
         ],
