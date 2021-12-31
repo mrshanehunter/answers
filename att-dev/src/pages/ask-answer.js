@@ -5,7 +5,7 @@ import SEO from "../components/SEO"
 export default function AskAnswerPage({ ...props }) {
   return (
     <>
-      <Seo title="Answer" />
+      <SEO title="Answer" />
       <AskAnswer props={props} />
     </>
   )
