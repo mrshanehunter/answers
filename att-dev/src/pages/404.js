@@ -2,11 +2,11 @@ import React from "react"
 import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 const NotFoundPage = () => (
   <>
-    <Seo title="404 - Page Not Found" />
+    <SEO title="404 - Page Not Found" />
     <Card className="mt-5 mb-5 pt-5 pb-5">
       <Card.Body className="text-center">
         <h3>404:</h3>

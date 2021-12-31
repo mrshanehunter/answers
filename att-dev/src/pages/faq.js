@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import FAQComp from "../components/FAQComp"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 const StyledContainer = styled.div`
   width: 90%;
@@ -16,7 +16,7 @@ export default function FAQPage({ data }) {
 
   return (
     <>
-      <Seo title="FAQ" />
+      <SEO title="FAQ" />
       <StyledContainer>
         <FAQComp faqs={faqs} />
       </StyledContainer>

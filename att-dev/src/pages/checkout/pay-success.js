@@ -1,11 +1,11 @@
 import React from "react"
 import PaySuccess from "../../components/PaySuccess"
-import Seo from "../../components/Seo"
+import SEO from "../../components/SEO"
 
 export default function PaySuccessPage({ ...props }) {
   return (
     <>
-      <Seo title="Successful Payment" />
+      <SEO title="Successful Payment" />
       <PaySuccess props={props} />
     </>
   )

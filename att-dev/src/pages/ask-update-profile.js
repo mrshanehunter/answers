@@ -1,11 +1,11 @@
 import React from "react"
 import UpdateProfile from "../components/UpdateProfile"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 export default function AskUpdateProfilePage({ ...props }) {
   return (
     <>
-      <Seo title="Update Profile" />
+      <SEO title="Update Profile" />
       <UpdateProfile props={props} />
     </>
   )

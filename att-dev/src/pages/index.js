@@ -3,11 +3,11 @@ import Card from "react-bootstrap/Card"
 import Button from "react-bootstrap/Button"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Teaser from "../components/Teaser"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 const IndexPage = ({ ...props }) => (
   <>
-    <Seo title="Welcome" />
+    <SEO title="Welcome" />
     <Teaser />
     <Card
       className="mt-1"

@@ -1,6 +1,6 @@
 import React from "react"
 import AskAnswer from "../components/AskAnswer"
-import Seo from "../components/Seo"
+import SEO from "../components/Seo"
 
 export default function AskAnswerPage({ ...props }) {
   return (

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import TermsComp from "../components/TermsComp"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 const StyledContainer = styled.div`
   width: 90%;
@@ -15,7 +15,7 @@ export default function TermsPage({ data }) {
   const terms = data.terms.nodes
   return (
     <>
-      <Seo title="Terms" />
+      <SEO title="Terms" />
       <StyledContainer>
         <TermsComp terms={terms} />
       </StyledContainer>

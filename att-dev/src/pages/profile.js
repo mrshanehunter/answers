@@ -1,11 +1,11 @@
 import React from "react"
 import Profile from "../components/Profile"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 export default function ProfilePage({ ...props }) {
   return (
     <>
-      <Seo title="Profile" />
+      <SEO title="Profile" />
       <Profile props={props} />
     </>
   )

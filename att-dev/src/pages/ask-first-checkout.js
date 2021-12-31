@@ -1,11 +1,11 @@
 import React from "react"
 import FirstCheckout from "../components/FirstCheckout"
-import Seo from "../components/Seo"
+import SEO from "../components/SEO"
 
 export default function AskFirstCheckoutPage({ ...props }) {
   return (
     <>
-      <Seo title="Checkout" />
+      <SEO title="Checkout" />
       <FirstCheckout props={props} />
     </>
   )
