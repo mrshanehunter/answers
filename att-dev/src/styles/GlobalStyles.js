@@ -101,7 +101,7 @@ img {
 
 .card {
   
-  max-width: 600px;
+  max-width: 475px;
   background: var(--shade);
   border: none;
   border-radius: 1rem;
@@ -109,9 +109,7 @@ img {
   margin: 0 auto;
 }
 
-.card-body {
-  min-width: 325px;
-}
+
 
 .link {
   font-size: 1rem;
@@ -126,7 +124,7 @@ img {
 
 
 .btn {
-  margin: 2rem auto 0;
+  margin: 0 auto;
   border-radius: 1rem;
   border: thin solid var(--gold);
   background: var(--shaded);
@@ -410,6 +408,53 @@ img {
   }
 }
 
+.modal-content {
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+ background: #412456;
+}
+
+.close-modal {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.close-modal button {
+ border-radius: 50%;
+ background: var(--purple);
+ color: var(--gold);
+ border: 0.05rem solid var(--lpurple);
+ font-size: 1.8rem;
+ padding: 0.25rem 1rem;
+}
+
+.modal-copy {
+ width: 75%;
+ margin: 2rem auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ flex: 1;
+}
+
+.modal-copy p {
+  font-size: 1.2rem;
+  color: var(--white)
+}
+
+.login-modal-button {
+  border-style: none;
+  background: transparent;
+  color: var(--gold);
+
+}
 
 
 

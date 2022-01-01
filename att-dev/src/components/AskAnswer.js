@@ -56,15 +56,15 @@ export default function AskAnswer({ ...props }) {
   return (
     <>
       <Card>
-        <Fade cascade={true}>
+        <Fade cascade={true} triggerOnce={true}>
           <Card.Body className="d-flex-column text-center justify-content-center align-items-center">
-            <Fade delay={2000}>
-              <Zoom delay={2000} duration={6500}>
+            <Fade delay={2000} triggerOnce={true}>
+              <Zoom delay={2000} duration={6500} triggerOnce={true}>
                 <h5>{card.card_name}</h5>
               </Zoom>
             </Fade>
-            <Fade delay={2000}>
-              <Zoom delay={2000} duration={6500}>
+            <Fade delay={2000} triggerOnce={true}>
+              <Zoom delay={2000} duration={6500} triggerOnce={true}>
                 <GatsbyImage
                   className=" p-0"
                   image={card.image.asset.gatsbyImageData}
@@ -79,16 +79,17 @@ export default function AskAnswer({ ...props }) {
                 />
               </Zoom>
             </Fade>
-            <Fade delay={7500} duration={9500}>
-              <Zoom delay={7500} duration={9500}>
+            <Fade delay={7500} duration={9500} triggerOnce={true}>
+              <Zoom delay={7500} duration={9500} triggerOnce={true}>
                 <h4>{card.yes_or_no}</h4>
               </Zoom>
             </Fade>
-            <Fade delay={10500} duration={9500}>
+            <Fade delay={10500} duration={9500} triggerOnce={true}>
               <p
                 style={{
-                  fontSize: `1.8rem`,
+                  fontSize: `1.4rem`,
                   textShadow: `1px 1px 1px var(--black)`,
+                  padding: `0, 1rem`,
                 }}
               >
                 {card.response}
@@ -99,7 +100,7 @@ export default function AskAnswer({ ...props }) {
       </Card>
 
       <Card className="mt-3">
-        <Fade delay={7500} duration={5000}>
+        <Fade delay={7500} duration={5000} triggerOnce={true}>
           <Card.Body className="w-100">
             {currentUser.balance === 0 ? (
               <AniLink

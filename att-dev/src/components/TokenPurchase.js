@@ -56,7 +56,7 @@ export default function TokenPurchase({ ...props }) {
         ))}
         <div className="tandccheck">
           <p>
-            By Aquiring Tokens you confirm your acceptance of Ask The Tarot's{" "}
+            Acquiring tokens confirms your acceptance of Ask The Tarot's{" "}
             <a
               href="https://answers.askthetarot.com.au/terms"
               target="_blank"
